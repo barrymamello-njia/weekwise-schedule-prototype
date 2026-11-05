@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f1">
+  <meta name="description" content="Explore possible college weeks with Weekwise, an independent student prototype using sample schedules. No account or registration access required.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-2MAkBsygfMromRnzz2fO3EQbxUpGVtu3V64e/iUt9xM='; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; worker-src 'none'">
+  <title>Weekwise · Fordham first fall</title>
+  <style>
+    :root{--paper:#f7f6f1;--white:#fffefa;--ink:#253d36;--muted:#626d65;--line:#dedfd5;--green:#274e40;--orange:#ba542e;--serif:Georgia,'Times New Roman',serif}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5}a{color:inherit}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:3px solid #bd622e;outline-offset:5px}button{font:inherit}header{border-bottom:1px solid var(--line)}.nav-wrap{max-width:1240px;margin:auto;min-height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 42px;gap:24px}.brand{text-decoration:none;display:flex;align-items:center;gap:11px;font-size:23px;font-weight:700;letter-spacing:-1px}.brand-mark{width:31px;height:31px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;transform:rotate(-8deg)}.brand-mark i{background:var(--green);border-radius:2px}.brand-mark i:nth-child(2){background:#b7c5a3}.brand-mark i:nth-child(5){background:#ce6d41}nav{display:flex;gap:7px}nav a{text-decoration:none;padding:10px 17px;color:var(--muted);font-size:14px;border-radius:7px}nav a[aria-current=page]{background:#e9ede3;color:var(--green);font-weight:700}.demo-badge{font-size:10px;font-weight:700;letter-spacing:1.7px;border:1px solid #d4d7c7;border-radius:4px;padding:5px 8px;color:#626c58;white-space:nowrap}.nav-left{display:flex;gap:35px;align-items:center}main{max-width:1240px;margin:0 auto;padding:56px 42px 24px}.eyebrow{display:flex;align-items:center;gap:9px;font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:700;color:var(--orange);margin:0 0 15px}.eyebrow:before{content:'';height:7px;width:7px;background:var(--orange);border-radius:50%}h1{font:normal clamp(38px,4.5vw,59px)/1.08 var(--serif);letter-spacing:-1.8px;margin:0 0 16px}h1 em{font-style:italic;color:#5b7455}.intro{font-size:16px;color:var(--muted);max-width:600px;margin:0}.heading{margin-bottom:35px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 322px;gap:33px;align-items:start}.context{display:flex;align-items:center;gap:12px;margin:0 0 22px;color:var(--muted);font-size:13px}.school-icon{display:grid;place-items:center;width:35px;height:35px;border:1px solid var(--line);border-radius:50%;color:var(--green)}.context strong{color:var(--ink);font-weight:600}.context .sep{color:#a9aea0}.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px}h2{font-size:16px;font-weight:600;margin:0}.count{color:var(--muted);font-size:12px}.course-list{display:grid;gap:10px}.course{display:flex;align-items:center;gap:16px;background:var(--white);border:1px solid var(--line);border-radius:9px;padding:18px 20px;position:relative;overflow:hidden}.course:before{content:'';width:4px;background:var(--accent);position:absolute;top:0;bottom:0;left:0}.course-icon{flex:none;width:43px;height:43px;background:var(--tint);color:var(--accent);border-radius:8px;display:grid;place-items:center;font-family:var(--serif);font-size:23px}.course-info{flex:1}.course-code{color:var(--muted);font-size:10px;font-weight:700;letter-spacing:1.2px;margin-bottom:3px}.course h3{font-size:16px;line-height:1.3;margin:0 0 5px;font-weight:600}.course-category{font-size:12px;color:var(--muted)}.check{width:21px;height:21px;border-radius:50%;background:#edf1e7;color:#507044;display:grid;place-items:center;font-size:12px;font-weight:bold;flex:none}.course-note{font-size:12px;color:var(--muted);margin:15px 0 0;display:flex;gap:7px;align-items:start}.summary{border-radius:12px;background:#e9eddf;padding:25px 24px 23px;position:relative;overflow:hidden}.summary-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#5b6a51;margin-bottom:23px}.week-art{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:10px 9px 8px;background:#fafbf5;border:1px solid #dce2ce;border-radius:7px;transform:rotate(-3deg);margin:0 6px 26px;box-shadow:4px 5px 0 #d9e0cb}.day{font-size:8px;text-align:center;color:#718066}.day .track{margin-top:7px;height:68px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 16px,#e7ebdf 16px,#e7ebdf 17px);position:relative}.block{position:absolute;left:0;right:0;border-radius:2px;height:21px;background:#adc0a0;top:4px}.day:nth-child(2) .block{top:24px;background:#dbb38c}.day:nth-child(3) .block{top:4px}.day:nth-child(4) .block{top:24px;background:#dbb38c}.day:nth-child(5) .block{top:12px;background:#aebdca}.block.second{top:41px;height:18px;background:#c1b2cc}.summary h2{font:normal 27px/1.12 var(--serif);letter-spacing:-.6px;margin-bottom:10px}.summary p{font-size:13px;line-height:1.6;color:#5b6857;margin:0 0 23px}.stats{display:flex;gap:23px;border-top:1px solid #d1d8c6;padding-top:16px;margin-bottom:21px}.stat strong{display:block;font-size:23px;font-weight:500;line-height:1.25}.stat span{font-size:11px;color:#64715c}.primary{display:flex;align-items:center;justify-content:space-between;gap:15px;text-decoration:none;color:#fffdf6;background:var(--green);padding:13px 17px;border-radius:6px;font-size:13px;font-weight:600;transition:background .2s,transform .2s}.primary:hover{background:#193e30;transform:translateY(-1px)}.arrow{font-size:20px;line-height:1}.storage{display:flex;align-items:center;justify-content:center;gap:6px;color:#68765f;font-size:10px;margin-top:12px}.storage svg{flex:none}.demo-note{margin:19px 4px 0;color:var(--muted);font-size:11px;line-height:1.7}.demo-note strong{font-weight:600;color:#5d6658}.source-link{display:inline-block;margin-top:6px;text-underline-offset:3px}.bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:42px;padding:18px 0 0;color:var(--muted);font-size:11px}.bottom .tagline{font-family:var(--serif);font-style:italic;font-size:15px}.pending{max-width:630px;border:1px solid var(--line);padding:35px;background:var(--white);border-radius:12px}.pending h2{font-family:var(--serif);font-size:29px;font-weight:400}.pending p{color:var(--muted)}.back-link{display:inline-block;margin-top:8px;text-underline-offset:4px}.review-status{font-size:11px;color:#507044;margin-top:9px;min-height:17px}[hidden]{display:none!important}
+    @media(min-width:1500px){main{padding-top:74px}}@media(max-width:950px){.nav-wrap{padding:0 26px}.nav-left{gap:15px}main{padding:38px 26px 22px}.layout{grid-template-columns:minmax(0,1fr) 290px;gap:23px}.course{padding:16px}.course h3{font-size:15px}.course-icon{width:35px;height:35px}}@media(max-width:720px){.nav-wrap{padding:17px 20px;min-height:0;flex-wrap:wrap;gap:13px}.nav-left{display:contents}.brand{font-size:21px}nav{order:3;width:100%;gap:6px}nav a{flex:1;text-align:center;padding:8px 12px}main{padding:32px 20px 22px}h1{font-size:42px}.heading{margin-bottom:27px}.intro{font-size:15px}.layout{grid-template-columns:1fr;gap:26px}.context{font-size:12px;gap:8px}.course{gap:12px;padding:16px}.summary{padding:24px}.week-art{max-width:230px;margin:0 auto 28px}.summary h2{font-size:29px}.stats{gap:35px}.bottom{margin-top:30px;align-items:start}.bottom .tagline{font-size:13px}.demo-note{font-size:12px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+    /* Schedule comparison: a fixed time scale keeps every option comparable. */
+    #details .heading{margin-bottom:25px}#details h1{font-size:clamp(34px,4vw,48px)}#details .intro{max-width:720px}.schedule-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:25px 0}.schedule-option{position:relative;text-align:left;padding:17px 18px;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}.schedule-option:hover{border-color:#8da385;background:#f1f4e9}.schedule-option[aria-pressed=true]{border:2px solid var(--green);padding:16px 17px;background:#edf1e6}.option-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}.option-number{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:1.2px}.pick-badge{color:#386044;font-size:10px;font-weight:700}.option-title{display:block;font-family:var(--serif);font-size:24px;line-height:1.2;margin-bottom:5px}.option-description{display:block;color:var(--muted);font-size:12px}.option-preview{display:flex;gap:5px;margin-top:12px;align-items:center}.mini-day{height:33px;flex:1;border-radius:3px;background:#e9ece4;position:relative;overflow:hidden}.mini-meeting{position:absolute;left:3px;right:3px;border-radius:2px;background:var(--accent)}.mini-free{display:grid;place-items:center;height:100%;color:#8b967c;font-size:12px}.schedule-layout{display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:23px;align-items:start}.calendar-panel{border:1px solid var(--line);border-radius:11px;background:var(--white);overflow:hidden}.calendar-top{padding:18px 21px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:14px}.calendar-top h2{font-size:17px}.calendar-top p{margin:3px 0 0;font-size:11px;color:var(--muted)}.conflict-badge{border-radius:20px;background:#edf3e5;color:#49663d;padding:5px 9px;font-size:10px;font-weight:600;white-space:nowrap}.calendar-scroll{overflow-x:auto;padding:0 12px 0 0}.calendar-scroll:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}.calendar{min-width:630px}.calendar-head{display:grid;grid-template-columns:55px repeat(5,minmax(0,1fr));border-bottom:1px solid var(--line);height:45px;align-items:center}.day-heading{text-align:center;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.4px}.time-heading{text-align:center;font-size:9px;color:var(--muted)}.calendar-body{display:grid;grid-template-columns:55px repeat(5,minmax(0,1fr));height:600px;position:relative;margin-top:15px;margin-bottom:18px}.time-axis{position:relative}.hour-label{position:absolute;right:9px;transform:translateY(-50%);color:#7c8477;font-size:10px;line-height:1;white-space:nowrap}.calendar-day{position:relative;border-left:1px solid #e4e6dd;background:repeating-linear-gradient(to bottom,#e3e6dc 0,#e3e6dc 1px,transparent 1px,transparent 30px,#f0f1e9 30px,#f0f1e9 31px,transparent 31px,transparent 60px);box-shadow:inset 0 -1px #e3e6dc}.meeting{display:flex;flex-direction:column;justify-content:center;align-items:start;position:absolute;left:4px;right:4px;border:1px solid transparent;border-left:3px solid var(--accent);border-radius:5px;padding:4px 6px;background:var(--tint);color:var(--ink);cursor:pointer;text-align:left;overflow:hidden;line-height:1.2;transition:box-shadow .15s}.meeting:hover{box-shadow:0 2px 8px #263d3626;z-index:2}.meeting[aria-pressed=true]{box-shadow:0 0 0 1px var(--accent);z-index:1}.meeting-code{font-size:10px;font-weight:700;white-space:nowrap}.meeting-name{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;margin-top:2px}.meeting-time{font-size:9px;white-space:nowrap;margin-top:4px;color:#4d5c53}.free-day-note{position:absolute;top:37%;left:8px;right:8px;text-align:center;font-size:11px;color:#818c75}.free-day-note span{display:block;font-size:23px;font-family:var(--serif);margin-bottom:5px}.calendar-legend{display:flex;gap:8px 17px;flex-wrap:wrap;padding:13px 18px;border-top:1px solid var(--line)}.legend-item{border:0;background:none;padding:2px 0;cursor:pointer;display:flex;gap:6px;align-items:center;color:var(--muted);font-size:10px}.legend-item[aria-pressed=true]{color:var(--ink);font-weight:700}.legend-dot{height:8px;width:8px;border-radius:2px;background:var(--accent)}.calendar-footnote{font-size:11px;color:var(--muted);margin:10px 0 0;line-height:1.6}.week-summary{padding:20px;background:#e9eddf;border-radius:10px}.panel-label{font-size:10px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:#65745c;margin:0 0 15px}.week-summary h2{font:normal 26px/1.2 var(--serif);margin:0 0 17px}.week-metrics{margin:0 0 18px}.metric-row{display:flex;justify-content:space-between;align-items:baseline;gap:9px;padding:9px 0;border-top:1px solid #d4dcc9;font-size:11px;color:#627158}.metric-row dd{margin:0;font-size:13px;font-weight:600;color:var(--ink)}.week-summary .primary{width:100%;border:0;cursor:pointer;font-size:12px;justify-content:center}.week-summary .primary:disabled{opacity:1;background:#d2ddc5;color:#345031;cursor:default;transform:none}.save-feedback{font-size:11px;line-height:1.6;margin:11px 0 0;color:#506447}.clear-choice{border:0;background:none;color:#66755b;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:10px;padding:7px 0 0}.course-detail{padding:20px 0 0}.course-detail .panel-label{margin-bottom:10px}.detail-name{font:normal 21px/1.2 var(--serif);margin:6px 0 9px}.detail-category{font-size:11px;color:var(--muted);margin:0 0 14px}.detail-section{display:inline-block;font-size:10px;background:#efefe7;color:#687260;border-radius:4px;padding:3px 6px;margin-bottom:10px}.detail-meetings{list-style:none;padding:0;margin:0}.detail-meetings li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line);padding:7px 0;font-size:11px}.detail-meetings time{color:var(--muted);white-space:nowrap}.detail-help{font-size:11px;line-height:1.6;color:var(--muted);margin-top:12px}.schedule-context{font-size:12px;color:var(--muted);margin-top:15px}.schedule-context strong{font-weight:600;color:var(--ink)}.schedule-announcement{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.mobile-scroll-hint{display:none}.home-favorite{margin-top:10px;color:var(--green);font-weight:600}
+    @media(max-width:1050px){.schedule-layout{grid-template-columns:minmax(0,1fr) 220px;gap:18px}.calendar-scroll{overflow-x:auto}.schedule-option{padding:15px}.schedule-option[aria-pressed=true]{padding:14px}.option-title{font-size:22px}.week-summary{padding:17px}}
+    @media(max-width:900px){.schedule-layout{grid-template-columns:1fr}.schedule-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:25px}.course-detail{padding:5px 0 0}.calendar{min-width:610px}.calendar-body{height:600px}.calendar-scroll{padding-right:12px}}
+    @media(max-width:720px){#details h1{font-size:37px}.schedule-options{gap:8px}.schedule-option{padding:11px 9px}.schedule-option[aria-pressed=true]{padding:10px 8px}.option-title{font-size:19px}.option-description{font-size:10px;line-height:1.4}.option-top{align-items:start;flex-direction:column;gap:2px;min-height:29px;margin-bottom:4px}.option-number{font-size:9px}.pick-badge{font-size:9px}.option-preview{gap:3px}.mini-meeting{left:1px;right:1px}.calendar-top{padding:15px}.calendar-top h2{font-size:16px}.calendar-top p{max-width:180px}.mobile-scroll-hint{display:block;font-size:10px;color:var(--muted);margin:0 0 8px}.schedule-sidebar{grid-template-columns:1fr}.course-detail{padding:0 3px}.week-metrics{display:grid;grid-template-columns:1fr 1fr;column-gap:20px}.week-summary h2{margin-bottom:12px}.schedule-context{font-size:11px}.calendar-footnote{font-size:10px}.calendar-scroll{scrollbar-width:thin}}
+    .course-name{display:block;font-size:16px;line-height:1.3;margin:3px 0 5px;font-weight:600}.course-info>.course-code{display:block}.course-info>.course-category{display:block}
+    .major-picker{margin-bottom:30px}.major-label{font-size:12px;font-weight:700;margin:0 0 12px}.major-options{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.major-option{display:flex;flex-direction:column;align-items:start;gap:5px;position:relative;cursor:pointer;border:1px solid var(--line);border-radius:10px;padding:19px;background:var(--white);color:var(--ink);text-align:left;min-width:0}.major-option:hover{border-color:#8da385}.major-option[aria-pressed=true]{border:2px solid var(--green);padding:18px;background:#edf1e6}.major-symbol{font-family:var(--serif);font-size:25px;color:var(--orange);margin-bottom:5px}.major-name{font-family:var(--serif);font-size:25px;line-height:1.15}.major-school{font-size:11px;color:var(--muted)}.major-check{position:absolute;top:16px;right:17px;color:var(--green);font-size:13px}.welcome-note{border:1px dashed #cbd1c1;border-radius:10px;text-align:center;padding:28px;color:var(--muted);font-size:14px}.welcome-note strong{display:block;font-family:var(--serif);font-weight:400;font-size:24px;color:var(--ink);margin-bottom:5px}.course{cursor:pointer}.course:has(input:checked){border-color:#a9b69b}.course input{width:20px;height:20px;accent-color:var(--green);flex:none;cursor:pointer;margin:0}.course:has(input:focus-visible){outline:3px solid var(--orange);outline-offset:3px}.course:has(input:not(:checked)){background:#f5f4ef}.course-credit{font-size:11px;color:var(--muted);display:inline-block;margin-left:8px;font-weight:400;letter-spacing:0}.course-note{line-height:1.7}.selection-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0}.text-button{border:0;background:none;color:var(--green);font:inherit;font-size:11px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:4px 0}.selection-total{font-size:12px;color:var(--muted)}.major-explanation{font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 18px}.year-ahead{margin:20px 0;border-left:3px solid #c1cbaa;padding:1px 0 1px 15px}.year-ahead h3{font-size:12px;margin:0 0 6px}.year-ahead p{font-size:12px;color:var(--muted);margin:0;line-height:1.7}.source-details{margin:20px 0 0;border-top:1px solid var(--line);padding-top:15px;font-size:12px;color:var(--muted)}.source-details summary{cursor:pointer;color:var(--green);font-weight:600}.source-details p{line-height:1.7}.source-list{padding-left:18px;line-height:1.9}.primary:disabled{opacity:.55;cursor:not-allowed;transform:none}.summary .primary{border:0;width:100%;cursor:pointer}.summary .primary:disabled{cursor:not-allowed}.home-message{font-size:12px;color:var(--orange);min-height:18px;margin:10px 0}.edit-courses{font-size:12px;text-underline-offset:3px;display:inline-block;margin-top:13px}.meeting.lab{border-style:dashed;border-left-style:solid}.detail-component{display:block;color:var(--muted);font-size:10px}.detail-meetings li{align-items:center}.detail-meetings li>span:last-child{font-size:10px}.empty-calendar{padding:40px;text-align:center;color:var(--muted)}.summary p.selection-hint{font-size:11px;margin:10px 0 0}.campus-note{font-size:12px;color:var(--muted);margin:14px 0 0}.credit-badge{font-size:10px;border:1px solid var(--line);padding:3px 7px;border-radius:5px;white-space:nowrap}
+    @media(max-width:720px){.major-options{gap:8px}.major-option{padding:13px 10px}.major-option[aria-pressed=true]{padding:12px 9px}.major-name{font-size:20px}.major-school{font-size:10px;line-height:1.4}.major-symbol{font-size:22px}.major-check{right:9px;top:10px}.course-info{min-width:0}.course h3{font-size:14px}.context{flex-wrap:wrap}.section-title{align-items:start}.count{white-space:nowrap;font-size:10px}}
+    #home h1{font-size:clamp(35px,4vw,48px)}#home .heading{margin-bottom:25px}.course-toolbar{margin-bottom:13px}.search-label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.course-search{width:100%;font:inherit;font-size:13px;color:var(--ink);background:var(--white);border:1px solid var(--line);border-radius:7px;padding:11px 12px}.course-search:focus-visible{outline:3px solid var(--orange);outline-offset:2px}.requirement-filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.filter-chip{font-size:11px;border:1px solid var(--line);border-radius:20px;padding:5px 9px;color:var(--muted);background:transparent;cursor:pointer}.filter-chip[aria-pressed=true]{color:white;background:var(--green);border-color:var(--green)}.course-list{gap:0;border:1px solid var(--line);border-radius:8px;max-height:650px;overflow-y:auto;background:var(--white);scrollbar-width:thin}.course-list:focus-visible{outline:3px solid var(--orange);outline-offset:2px}.course-group-heading{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#66735d;background:#edf0e6;margin:0;padding:8px 12px;border-bottom:1px solid var(--line)}.course-list .course{display:grid;grid-template-columns:20px minmax(0,1fr) 130px 30px;gap:10px;border:0;border-bottom:1px solid #ecece3;border-radius:0;padding:9px 12px;background:transparent;min-height:57px}.course-list .course:before{display:none}.course-list .course:has(input:checked){background:#edf3e6;border-color:#e0e7d8}.course-list .course:has(input:not(:checked)){background:transparent}.course-list .course:hover{background:#f2f4ec}.course-list .course input{width:17px;height:17px}.course-list .course-name{font-size:12px;line-height:1.35;margin:0 0 3px}.course-list .course-code{font-size:10px;letter-spacing:.3px;font-weight:400;margin:0}.requirement-tags{display:flex;flex-wrap:wrap;gap:3px}.requirement-tag{font-size:9px;padding:2px 5px;border:1px solid #d9dfcf;border-radius:4px;color:#55644b;background:#f5f7ef}.row-credits{font-size:12px;font-weight:600;color:var(--muted);text-align:right}.row-suggested{font-size:9px;color:#6b815c;margin-left:5px}.library-header{display:grid;grid-template-columns:20px minmax(0,1fr) 130px 30px;gap:10px;font-size:9px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);padding:8px 12px}.no-results{font-size:13px;color:var(--muted);padding:22px;line-height:1.7}.empty-selection{font-size:12px;color:var(--muted);line-height:1.7}.semester-aside{position:sticky;top:20px}.semester-aside .summary-label{margin-bottom:12px}.semester-aside .summary h2{font-size:28px}.semester-picks{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:7px}.semester-pick{display:flex;align-items:center;gap:7px;font-size:11px;color:#3e5339}.semester-pick span{flex:1;min-width:0}.semester-pick small{font-size:9px;display:block;color:#708064}.remove-course{border:0;background:none;cursor:pointer;color:#607253;font-size:17px;padding:0 3px;line-height:1.3}.requirement-coverage{padding:12px 0 0;border-top:1px solid #d1d8c6;margin-bottom:17px}.requirement-coverage h3{font-size:10px;margin:0 0 7px;font-weight:600}.coverage-tags{display:flex;flex-wrap:wrap;gap:5px}.coverage-tag{font-size:9px;padding:3px 6px;background:#f6f8f1;border-radius:4px;color:#536948}.coverage-explainer{font-size:10px;color:#6a775f;line-height:1.6;margin:7px 0 0}.semester-aside .stats{gap:28px;margin-bottom:15px}.semester-aside .summary .selection-hint{margin-bottom:12px}.degree-roadmap{margin-top:20px;border:1px solid var(--line);border-radius:8px;background:var(--white);padding:14px 16px;font-size:12px}.degree-roadmap summary{cursor:pointer;font-weight:600}.degree-roadmap p{color:var(--muted);line-height:1.7;font-size:11px}.roadmap-list{padding-left:17px;line-height:1.8;color:var(--muted);font-size:11px}.schedule-option:disabled{cursor:default;opacity:.65}.schedule-option:disabled:hover{background:var(--white);border-color:var(--line)}
+    @media(max-width:1050px){.course-list .course,.library-header{grid-template-columns:18px minmax(0,1fr) 105px 26px;gap:7px}.course-list .course-name{font-size:11px}.semester-aside .summary{padding:21px 18px}}
+    @media(max-width:720px){.semester-aside{position:static}.library-header{display:none}.course-list{max-height:570px}.course-list .course{grid-template-columns:19px minmax(0,1fr) 28px;gap:5px 9px;padding:10px}.course-list .course input{grid-row:1 / 3}.course-list .course-info{grid-column:2;grid-row:1}.requirement-tags{grid-column:2;grid-row:2}.row-credits{grid-column:3;grid-row:1 / 3;align-self:center}.course-list .course-name{font-size:12px}.semester-aside .summary{padding:23px}}
+    .degree-picker{margin:20px 0 0;padding:21px 23px;background:#edf0e6;border:1px solid #d9dfcf;border-radius:10px}.degree-picker h2{font-size:14px;margin:0 0 6px}.degree-picker p{font-size:12px;color:var(--muted);margin:0 0 12px;line-height:1.7}.degree-options{display:flex;gap:10px;flex-wrap:wrap}.degree-option{background:var(--white);color:var(--green);border:1px solid #bbc9af;border-radius:7px;padding:11px 16px;cursor:pointer;text-align:left;min-width:180px;font-size:13px}.degree-option span{display:block;font-size:10px;color:var(--muted);margin-top:3px}.degree-option[aria-pressed=true]{border:2px solid var(--green);padding:10px 15px;background:#e3ecd8}.degree-fixed{font-size:14px;color:var(--green);font-weight:600}.degree-picker .degree-policy-note{margin:10px 0 0;font-size:10px}.credit-budget{border-top:1px solid #d1d8c6;padding-top:12px;margin-bottom:16px}.credit-budget-line{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:#536747;margin-bottom:7px}.credit-budget-line strong{color:var(--green)}.credit-budget progress{width:100%;height:7px;display:block;accent-color:var(--green)}.credit-budget .credit-budget-note{font-size:10px;color:#68775e;line-height:1.6;margin:7px 0 0}.credit-budget[data-over=true] strong,.credit-budget[data-over=true] .credit-budget-note{color:#a04426}.credit-budget[data-over=true] progress{accent-color:#a04426}.course-list .course:has(input:disabled){opacity:.56;cursor:default}.course-list input:disabled{cursor:default}.course-picker-heading{scroll-margin-top:22px}.degree-option:focus-visible{outline:3px solid var(--orange);outline-offset:3px}#home .major-picker{margin-bottom:15px}#home .major-label{font-size:13px}.major-options .major-school{line-height:1.5}
+    @media(max-width:720px){.degree-picker{padding:17px}.degree-options{display:grid;grid-template-columns:1fr 1fr}.degree-option{min-width:0;padding:10px}.degree-option[aria-pressed=true]{padding:9px}.degree-option span{line-height:1.4}}
+    .readiness-prompt{position:fixed;right:24px;bottom:24px;z-index:20;width:min(350px,calc(100vw - 32px));padding:23px;border:1px solid #c5d1b7;border-radius:14px;background:#fffef8;color:var(--ink);box-shadow:0 8px 35px #253d3629;animation:nudge-in .2s ease-out}.readiness-prompt h2{font:normal 26px/1.13 var(--serif);letter-spacing:-.6px;margin:9px 15px 9px 0}.readiness-prompt p{font-size:12px;line-height:1.6;color:var(--muted);margin:0}.readiness-prompt .nudge-kicker{font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--orange);padding-right:24px}.nudge-dismiss{position:absolute;right:10px;top:9px;display:grid;place-items:center;width:32px;height:32px;border:0;border-radius:50%;background:transparent;color:#6b7962;font-size:21px;cursor:pointer}.nudge-dismiss:hover{background:#eef2e7}.nudge-actions{display:grid;grid-template-columns:1fr 1.1fr;gap:8px;margin-top:17px}.nudge-actions button{font:inherit;font-size:11px;min-height:42px;border:1px solid #c5d0ba;border-radius:6px;padding:10px 8px;background:#f7f8f1;color:var(--green);cursor:pointer}.nudge-actions .nudge-yes{background:var(--green);color:white;border-color:var(--green)}#explore{font-size:16px;min-height:62px;padding:18px 20px;justify-content:space-between;border-radius:8px;box-shadow:0 3px 0 #173c2d25}#explore .arrow{font-size:25px}@keyframes nudge-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:720px){.readiness-prompt{right:16px;bottom:max(16px,env(safe-area-inset-bottom));padding:19px;width:calc(100vw - 32px)}.readiness-prompt h2{font-size:24px}.readiness-prompt p{font-size:11px}.nudge-actions{margin-top:13px}body.has-ready-nudge main{padding-bottom:245px}#explore{min-height:64px;font-size:17px}}
+    @media(prefers-reduced-motion:reduce){.readiness-prompt{animation:none}}
+    .plan-workspace{margin:28px 0 0;padding:22px;border:1px solid var(--line);border-radius:12px;background:#f0f1e9}.plan-heading{display:flex;justify-content:space-between;align-items:baseline;gap:14px}.plan-heading h2{font:normal 25px var(--serif)}.plan-heading p,.plan-help{font-size:12px;color:var(--muted);margin:7px 0 16px}.plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.plan-card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:15px;min-width:0}.plan-card h3{font-size:14px;margin:0 0 7px}.plan-card p{font-size:12px;color:var(--muted);margin:0 0 8px;min-height:37px}.plan-card small{display:block;font-size:11px;color:var(--muted);margin-bottom:12px}.plan-actions{display:flex;gap:8px;flex-wrap:wrap}.plan-button{border:1px solid #b9c6b0;border-radius:6px;color:var(--green);background:transparent;padding:8px 11px;font-size:12px;cursor:pointer}.plan-button:hover{background:#e9eddf}.plan-button:disabled{opacity:.5;cursor:not-allowed}.plan-save{width:100%;margin-bottom:9px;background:#e9eddf}.plan-card[data-review=true]{border-color:var(--green);box-shadow:0 0 0 1px var(--green)}.advisor-panel{margin-top:18px;padding-top:18px;border-top:1px solid #cfd5c5}.advisor-panel h3{font:normal 23px var(--serif);margin:0 0 7px}.advisor-panel p{font-size:12px;color:var(--muted);margin:8px 0 12px}.advisor-panel label{font-size:12px;font-weight:600;display:block;margin-bottom:6px}.advisor-panel textarea{display:block;width:100%;max-width:720px;min-height:85px;resize:vertical;border:1px solid #c1c9b8;border-radius:7px;padding:11px;background:var(--white);color:var(--ink);font:inherit;font-size:13px;margin-bottom:6px}.advisor-panel textarea:focus-visible{outline:3px solid var(--orange);outline-offset:2px}.advisor-panel .plan-actions{margin-top:15px}.plan-status{font-size:12px;color:var(--green);margin:12px 0 0;min-height:18px}.registration-note{border-left:3px solid #c78a59;padding-left:11px;margin-top:18px!important}.print-report{display:none}
+    @media(max-width:720px){.plan-workspace{padding:16px}.plan-grid{grid-template-columns:1fr}.plan-heading{display:block}.plan-card p{min-height:0}.plan-card .plan-save{width:auto;margin:0}.plan-card .plan-actions{margin-top:9px}.plan-heading h2{font-size:24px}}
+    @media print{body.printing-plan>*{display:none!important}body.printing-plan>.print-report{display:block!important}body{background:white}.print-report{font-size:11px;color:#20372d}.report-calendar{break-inside:avoid}.report-table tr{break-inside:avoid}}
+    .public-demo-note{font-size:12px;line-height:1.6;color:var(--muted);border-left:3px solid #c2ccb5;padding-left:12px;margin:16px 0 0;max-width:700px}.privacy-panel{margin-top:32px;padding:22px;border:1px solid var(--line);border-radius:10px;background:var(--white)}.privacy-panel summary{font-size:14px;font-weight:600;cursor:pointer}.privacy-panel p,.privacy-panel li{font-size:12px;line-height:1.7;color:var(--muted);max-width:850px}.privacy-panel ul{padding-left:18px}.remember-label{display:flex;align-items:center;gap:9px;margin:14px 0;font-size:13px}.remember-label input{width:18px;height:18px;accent-color:var(--green)}.privacy-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:15px}.privacy-panel .privacy-status{min-height:18px;color:var(--green);margin:12px 0 0}.erase-confirm{border-left:3px solid var(--orange);padding-left:14px;margin-top:16px}.erase-confirm .plan-button:last-child{color:#8d3323;border-color:#bc7b65}.privacy-caption{font-size:11px!important;margin:5px 0}.privacy-panel:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <div class="nav-left">
+        <a class="brand" href="#home" aria-label="Weekwise home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>weekwise<span style="color:var(--orange)">.</span></a>
+        <nav aria-label="Main navigation"><a href="#home" data-route="home">Major & courses</a><a href="#details" data-route="details" id="weekly-nav" hidden>Weekly possibilities</a></nav>
+      </div>
+      <span class="demo-badge">STUDENT PROTOTYPE</span>
+    </div>
+  </header>
+  <main>
+    <section id="home" aria-labelledby="home-title">
+      <div class="heading">
+        <p class="eyebrow">01 / Your starting point</p>
+        <h1 id="home-title" tabindex="-1">What is your major?</h1>
+        <p class="intro">Start with your intended major. We’ll reveal the courses for your degree path right here.</p>
+        <p class="campus-note">Fordham University · Rose Hill demo · Incoming first-year · Fall semester</p>
+        <p class="public-demo-note">Independent student prototype, not affiliated with or endorsed by Fordham University. Meeting times and sections are fictional. No university login needed; this demo cannot access your records or register classes.</p>
+      </div>
+      <div class="major-picker"><p class="major-label">Choose one to get started</p><div class="major-options" id="major-options" role="group" aria-label="Choose your intended major"></div><div class="degree-picker" id="degree-picker" hidden><h2 id="degree-title">Which degree are you pursuing?</h2><p id="degree-description"></p><div class="degree-options" id="degree-options" role="group" aria-label="Choose your degree designation"></div><p class="degree-policy-note" id="degree-policy-note"></p></div></div>
+      <p id="home-message" class="home-message" role="status" aria-live="polite"></p>
+      <div class="welcome-note" id="welcome-note">Choose your major above to unlock your first-fall course options.</div>
+      <div class="layout" id="course-picker" hidden>
+        <div>
+          <div class="context"><strong>Fordham University</strong><span class="sep">/</span><span id="major-context"></span></div>
+          <p class="major-explanation" id="major-explanation"></p>
+          <div class="section-title course-picker-heading" id="course-picker-heading" tabindex="-1"><h2>02 · Build your fall semester</h2><span class="count" id="course-count"></span></div>
+          <div class="course-toolbar"><label for="course-search" class="search-label">Find a course or requirement</label><input class="course-search" id="course-search" type="search" placeholder="Try art, biology, English, or a course code…" autocomplete="off"><div class="requirement-filters" id="requirement-filters" role="group" aria-label="Filter courses by requirement"></div></div>
+          <div class="library-header" aria-hidden="true"><span></span><span>Course</span><span>Counts toward</span><span>Cr.</span></div>
+          <div class="course-list" id="course-list" tabindex="0" role="region" aria-label="First-fall course options"></div>
+          <div class="selection-tools"><span class="selection-total" id="selection-total"></span><button class="text-button" type="button" id="reset-courses">Restore suggested selection</button></div>
+          <p class="course-note"><span aria-hidden="true">ⓘ</span><span>Suggestions for a first fall, not a complete degree checklist. Placement, AP credit, and your adviser can change your starting courses.</span></p>
+          <div class="year-ahead"><h3>Later in your first year</h3><p id="year-ahead"></p></div>
+          <details class="degree-roadmap"><summary>Your major beyond the first semester</summary><p>Required courses and choice areas across the degree. Later courses are shown for context; they may require prerequisites and are not first-fall selections.</p><ul class="roadmap-list" id="major-roadmap"></ul></details>
+          <details class="source-details"><summary>Where these suggestions come from</summary><p>Course requirements come from Fordham. The fall mix is our sample starting point, not an official assigned schedule. Math and writing courses depend on placement.</p><ul class="source-list" id="source-list"></ul><p id="major-extra-note"></p></details>
+        </div>
+        <aside class="semester-aside" aria-label="Your selected semester">
+          <div class="summary">
+            <div class="summary-label">A little perspective helps</div>
+            <h2>Your fall, taking shape.</h2>
+            <div class="stats"><div class="stat"><strong id="selected-count">0</strong><span>selected courses</span></div><div class="stat"><strong id="selected-credits">0</strong><span>total credits</span></div></div>
+            <div class="credit-budget" id="credit-budget"><div class="credit-budget-line"><span>First-year planning cap</span><strong id="credit-cap-label"></strong></div><progress id="credit-progress" value="0" max="21" aria-label="Credits selected against your planning cap"></progress><p class="credit-budget-note" id="credit-budget-note"></p></div>
+            <ul class="semester-picks" id="semester-picks"></ul>
+            <div class="requirement-coverage"><h3>Requirement areas in this semester</h3><div class="coverage-tags" id="coverage-tags"></div><p class="coverage-explainer">Shows what your selection can count toward, not completed degree requirements.</p></div>
+            <button class="primary" id="explore" type="button">Explore my week <span class="arrow" aria-hidden="true">↗</span></button>
+            <p class="selection-hint" id="selection-hint"></p>
+            <div class="storage" id="storage-message"><svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 3h10v14H5zM8 3v5h5V3M8 12h5"/></svg><span>Demo progress stays in this browser</span></div>
+          </div>
+          <p class="demo-note"><strong>Real Fordham courses, fictional times.</strong> Weekly options illustrate different rhythms using the courses you select. They do not represent current section availability.</p>
+          <p class="review-status" id="review-status" role="status"></p>
+        </aside>
+      </div>
+    </section>
+    <section id="details" aria-labelledby="details-title" hidden>
+      <div class="heading">
+        <p class="eyebrow">03 / Weekly possibilities</p>
+        <h1 id="details-title" tabindex="-1">Your courses. <em>Find your rhythm.</em></h1>
+        <p class="intro">Same courses, different weeks. Pick an option to see when you're in class — and when the rest of your life fits in.</p>
+        <p class="schedule-context" id="schedule-context"></p>
+        <a href="#home" class="edit-courses">← Change major or courses</a>
+      </div>
+      <div class="schedule-options" id="schedule-options" role="group" aria-label="Compare three weekly schedules"></div>
+      <div class="schedule-announcement" id="schedule-announcement" role="status" aria-live="polite"></div>
+      <div class="schedule-layout">
+        <div>
+          <p class="mobile-scroll-hint">Scroll the calendar sideways to see all five days →</p>
+          <div class="calendar-panel">
+            <div class="calendar-top"><div><h2 id="calendar-title">Your sample week</h2><p id="calendar-subtitle">Four courses · repeating weekly</p></div><span class="conflict-badge">✓ No time overlaps</span></div>
+            <div class="calendar-scroll" tabindex="0" role="region" aria-label="Weekly calendar, Monday to Friday, 8 AM to 6 PM. Scroll horizontally on smaller screens.">
+              <div class="calendar">
+                <div class="calendar-head"><span class="time-heading">TIME</span><span class="day-heading">MON</span><span class="day-heading">TUE</span><span class="day-heading">WED</span><span class="day-heading">THU</span><span class="day-heading">FRI</span></div>
+                <div class="calendar-body" id="calendar-body"></div>
+              </div>
+            </div>
+            <div class="calendar-legend" id="calendar-legend" role="group" aria-label="Select a course for details"></div>
+          </div>
+          <p class="calendar-footnote">Demo data: real course names with fictional sections and times. These are sample arrangements, not confirmed course offerings. Click a class for its full meeting details.</p>
+        </div>
+        <aside class="schedule-sidebar" aria-label="Schedule summary and course details">
+          <div class="week-summary">
+            <p class="panel-label">This week at a glance</p>
+            <h2 id="summary-title"></h2>
+            <dl class="week-metrics" id="week-metrics"></dl>
+            <button class="primary" id="choose-schedule" type="button">Choose this schedule</button>
+            <p class="save-feedback" id="save-feedback" role="status" aria-live="polite"></p>
+            <button class="clear-choice" id="clear-choice" type="button" hidden>Clear my choice</button>
+            <button class="plan-button" id="save-for-advising" type="button" style="width:100%;margin-top:15px">Save or export a plan ↓</button>
+          </div>
+          <div class="course-detail" id="course-detail" aria-label="Selected course details"></div>
+        </aside>
+      </div>
+      <div class="plan-workspace" aria-labelledby="plans-title">
+        <div class="plan-heading"><h2 id="plans-title" tabindex="-1">A first choice. A couple of backups.</h2><span class="credit-badge" id="plan-storage-label">Saved on this laptop</span></div>
+        <p class="plan-help">Save the week below to a plan. Your saved courses and times stay put while you explore other possibilities.</p>
+        <div class="plan-grid" id="plan-grid"></div>
+        <p class="plan-status" id="plan-status" role="status" aria-live="polite"></p>
+        <div class="advisor-panel" id="advisor-panel" hidden>
+          <h3 id="advisor-title"></h3><p id="advisor-description"></p>
+          <label for="advisor-notes">Questions for your advisor (optional)</label>
+          <textarea id="advisor-notes" maxlength="1000" autocomplete="off" spellcheck="false" placeholder="For example: Does this art course meet my core requirement? Use sample information only."></textarea>
+          <p id="notes-status" role="status">Notes stay with this saved plan.</p>
+          <div class="plan-actions"><button class="plan-button" id="download-plan" type="button">Download advisor copy</button><button class="plan-button" id="print-plan" type="button">Print / save as PDF</button></div>
+          <p>Includes the weekly calendar, course codes, credits, requirement areas, and your questions. Send the downloaded file to your advisor yourself; they can open it in a browser.</p>
+          <p class="registration-note"><strong>Planning draft · not registered.</strong> These sections and times are fictional. Before registration, confirm actual offerings, CRNs, prerequisites, restrictions, seats, and campus travel time in Fordham’s portal. This prototype does not submit registrations.</p>
+        </div>
+      </div>
+    </section>
+    <div class="privacy-panel" id="privacy-panel" tabindex="-1" role="region" aria-label="Privacy and saved data">
+      <details><summary>Privacy & your demo data</summary><ul><li>This app does not create accounts, connect to Fordham’s systems, or send your course selections or advisor notes to a server. The app includes no advertising or analytics scripts.</li><li>Choices last for this visit by default. If you enable saving, your major, degree, selected courses, saved plans, and advisor notes persist in this browser until you clear them or your browser removes them. Other people using this browser profile may be able to see them.</li><li>Use sample information. Do not enter names, student IDs, university passwords, registration PINs, grades, or sensitive personal information in advisor notes. Notes are included in any advisor copy you download or print.</li><li>Downloading and printing create copies you control. Clearing this demo does not delete downloaded files, PDFs, printouts, or copies you have shared.</li><li>The hosting provider may process technical information such as IP addresses and request logs to deliver and protect the site. Links to Fordham open another website with its own privacy practices.</li></ul></details>
+      <label class="remember-label"><input id="remember-choices" type="checkbox">Remember my demo choices on this browser</label>
+      <p class="privacy-caption" id="privacy-lifetime">Off by default. Leave this off on a shared computer.</p>
+      <div class="privacy-actions"><button type="button" class="plan-button" id="clear-demo-data" aria-expanded="false" aria-controls="erase-confirm">Clear my saved data</button></div>
+      <div class="erase-confirm" id="erase-confirm" hidden><p>Clear all demo choices, Plan A/B/C, and advisor notes from this page and this browser’s saved demo data? Downloaded or printed copies will remain.</p><div class="privacy-actions"><button type="button" class="plan-button" id="cancel-erase">Keep my choices</button><button type="button" class="plan-button" id="confirm-erase">Yes, clear demo data</button></div></div>
+      <p class="privacy-status" id="privacy-status" role="status" aria-live="polite"></p>
+    </div>
+    <footer class="bottom"><span>Fordham University · First fall<br>Independent student prototype</span><span class="tagline">Make room for the rest of your life.</span></footer>
+  </main>
+  <aside class="readiness-prompt" id="readiness-prompt" role="region" aria-labelledby="readiness-title" hidden>
+    <button type="button" class="nudge-dismiss" id="dismiss-readiness" aria-label="Dismiss weekly options suggestion">×</button>
+    <p class="nudge-kicker">A few ways to make it fit</p><h2 id="readiness-title">Ready to see your options?</h2>
+    <p id="readiness-description">Compare a few ways to arrange your courses, or keep picking at your own pace.</p>
+    <div class="nudge-actions"><button type="button" id="keep-picking">Keep picking</button><button type="button" class="nudge-yes" id="show-week">See my options ↗</button></div>
+  </aside>
+  <div class="print-report" id="print-report"></div>
+  <script>
+    'use strict';
+    const sources = {
+      cs:'https://bulletin.fordham.edu/undergraduate/computer-information-sciences/computer-science-major/',
+      csStart:'https://bulletin.fordham.edu/undergraduate/computer-information-sciences/',
+      csCourses:'https://bulletin.fordham.edu/courses/cisc/',
+      psychology:'https://bulletin.fordham.edu/undergraduate/psychology/major/',
+      finance:'https://bulletin.fordham.edu/undergraduate/finance/finance-major/',
+      core:'https://bulletin.fordham.edu/undergraduate/fordham-college-core-curriculum/',
+      gabelliCore:'https://bulletin.fordham.edu/undergraduate/gabelli-business/academic-curriculum/liberal-arts-core/',
+      gabelliStart:'https://www.fordham.edu/gabelli-school-of-business/academic-programs-and-admissions/undergraduate-programs/core-curriculum/first-year-innovation-and-exploration/'
+    };
+    const catalog = {
+      cs1:{id:'CISC 1600 + 1610',name:'Computer Science I + Lab',credits:4,category:'Major foundation · required lecture + lab',note:'Fordham recommends starting CS I in your first semester. Selecting it includes the required 1-credit CISC 1610 lab.',icon:'⌘',lab:true},
+      discrete:{id:'CISC 1400',name:'Discrete Structures',credits:4,category:'Major requirement · recommended first semester',note:'Fordham recommends this alongside Computer Science I in the first semester.',icon:'⋈'},
+      calculus:{id:'MATH 1206',name:'Calculus I',credits:4,category:'B.S. requirement · placement dependent',note:'Required for the B.S. path. An optional addition to this fall starter set if your placement and adviser support it.',icon:'∫'},
+      psychology:{id:'PSYC 1200',name:'Foundations of Psychology',credits:3,category:'Major requirement · introductory course',note:'The starting course for the psychology major, and a prerequisite for most upper-level psychology courses.',icon:'◎'},
+      writing:{id:'ENGL 1102',name:'Composition II',credits:3,category:'University core · writing placement applies',note:'A core writing course. Composition I or an exemption may change your starting point.',icon:'Aa'},
+      philosophy:{id:'PHIL 1000',name:'Philosophy of Human Nature',credits:3,category:'University core · introductory philosophy',note:'A core foundation; suggested here as part of a balanced first-fall mix.',icon:'φ'},
+      theology:{id:'THEO 1000',name:'Faith and Critical Reason',credits:3,category:'University core · introductory theology',note:'An introductory core course. Suggested fall timing is illustrative.',icon:'✳'},
+      history:{id:'HIST 1000',name:'Understanding Historical Change: Modern Europe',credits:3,category:'University core option · historical change',note:'One option for the historical change core requirement, not the only history course that can fulfill it.',icon:'⌛'},
+      ground:{id:'CBBU 1001',name:'The Ground Floor',credits:3,category:'Gabelli business core · first-year course',note:'Full title: The Ground Floor: Starting and Succeeding at the Gabelli School of Business. Fordham places this in the first year, fall or spring.',icon:'↗'},
+      finite:{id:'MATH 1108',name:'Math for Business: Finite',credits:3,category:'Gabelli core · first-year requirement',note:'A first-year Gabelli core course. Placement or foundational coursework may change its timing.',icon:'∑'},
+      micro:{id:'ECON 1010',name:'Principles of Microeconomics',credits:3,category:'Gabelli core · first-year requirement',note:'Part of the first-year liberal arts foundation for Gabelli students, including intended finance majors.',icon:'↔'}
+    };
+    const majors = [
+      {id:'cs',name:'Computer Science',school:'Fordham College · B.S. sample path',icon:'⌘',keys:['cs1','discrete','writing','philosophy','calculus'],defaults:['cs1','discrete','writing','philosophy'],
+       explanation:'Build your first programming foundation, add discrete math, and make a start on the university core. The CS lecture and its required lab travel together.',
+       next:'After CS I, consider CISC 2000 + 2010 (Computer Science II + Lab). Calculus I is part of the B.S. path; its timing depends on placement and your adviser.',
+       extra:'This demo uses the B.S. path at Rose Hill. It does not model the B.A. path, AP substitutions, language placement, or a complete degree audit.',
+       links:[['Computer Science requirements',sources.cs],['Department first-semester guidance',sources.csStart],['Lecture/lab corequisites',sources.csCourses],['Fordham College core',sources.core]]},
+      {id:'psych',name:'Psychology',school:'Fordham College · major + university core',icon:'◎',keys:['psychology','writing','philosophy','theology','history'],defaults:['psychology','writing','philosophy','theology','history'],
+       explanation:'Begin with Foundations of Psychology and explore the university core. These core courses are suggested companions, not extra psychology-major requirements.',
+       next:'Statistics (PSYC 2000), then Research Methods Lab (PSYC 2010), follow in the major sequence. Ask your adviser when Statistics fits after Foundations.',
+       extra:'The psychology major requires 10 courses overall; this is just a first-semester starting point. Languages, math placement, and other degree requirements are not fully modeled.',
+       links:[['Psychology major and starting sequence',sources.psychology],['Fordham College core requirements',sources.core]]},
+      {id:'finance',name:'Finance',school:'Gabelli School of Business · Rose Hill',icon:'↗',keys:['ground','finite','micro','writing','philosophy'],defaults:['ground','finite','micro','writing','philosophy'],
+       explanation:'Start with the business foundation and Gabelli core. Advanced finance comes later, after financial accounting and financial management prerequisites.',
+       next:'Plan remaining first-year foundations such as ECON 1020 (Principles of Macroeconomics), MATH 1109 (Math for Business: Calculus), and ECON 2140 (Statistics I), with your class dean.',
+       extra:'The Ground Floor can be taken in fall or spring. Gabelli advising, orientation, and short required training also need attention; this calendar models selected credit-bearing classes only.',
+       links:[['Finance major and prerequisites',sources.finance],['Gabelli first-year business foundation',sources.gabelliStart],['Gabelli liberal arts core and first-year courses',sources.gabelliCore]]}
+    ];
+    Object.assign(sources,{
+      arts:'https://bulletin.fordham.edu/undergraduate/art-history/',
+      theatre:'https://bulletin.fordham.edu/courses/thea/',
+      visual:'https://bulletin.fordham.edu/courses/vart/',
+      music:'https://bulletin.fordham.edu/courses/musc/',
+      biology:'https://bulletin.fordham.edu/undergraduate/biological-sciences/',
+      physics:'https://bulletin.fordham.edu/undergraduate/physics-engineering/',
+      math:'https://bulletin.fordham.edu/undergraduate/mathematics/',
+      social:'https://bulletin.fordham.edu/undergraduate/sociology/',
+      spanish:'https://bulletin.fordham.edu/courses/span/',
+      french:'https://bulletin.fordham.edu/courses/fren/'
+    });
+    function entry(id,name,credits,group,areas,note,source) { return {id,name,credits,group,areas,note,category:areas.map(a=>areaLabels[a]).join(' · '),source,icon:'·'}; }
+    const areaLabels={major:'Major',business:'Business core',math:'Math / computation',english:'English / writing',art:'Fine & performing arts',physical:'Physical science',life:'Life science',history:'Historical change',social:'Social science',language:'Language sequence',philosophy:'Philosophy',theology:'Theology',economics:'Economics core',statistics:'Statistics core'};
+    const groupLabels={major:'Major foundations',business:'Business foundations',english:'English & writing',math:'Math & statistics',art:'Fine & performing arts',science:'Natural science',history:'History',social:'Social science',language:'Languages',humanities:'Philosophy & theology'};
+    Object.assign(catalog,{
+      artWorld:entry('ARHI 1100','Art History Introduction: World Art',3,'art',['art'],'One choice for the fine arts core; also carries a Global Studies attribute in Fordham College.',sources.arts),
+      artAsia:entry('ARHI 1102','Introduction to Art History: Asia',3,'art',['art'],'A fine arts core option focused on Asian art. Choose this or another arts option; you do not need every arts course.',sources.arts),
+      artAmerica:entry('ARHI 1103','Introduction to Art History: Americas',3,'art',['art'],'A fine arts core option exploring art across the Americas.',sources.arts),
+      artAfrica:entry('ARHI 1104','Introduction to Art History: Africa and African Diaspora',3,'art',['art'],'Listed among the fine arts core options; attributes and availability depend on the offering.',sources.gabelliCore),
+      artArchitecture:entry('ARHI 1105','Introduction to Art History: Architecture',3,'art',['art'],'One fine arts core choice, not an additional requirement on top of other arts choices.',sources.gabelliCore),
+      music:entry('MUSC 1100','Introduction to Music History',3,'art',['art'],'Fulfills the fine arts core; no prior music training is assumed.',sources.music),
+      theatre:entry('THEA 1100','Invitation to Theatre',3,'art',['art'],'Fulfills the fine arts core through an introduction to theatre and production.',sources.theatre),
+      urban:entry('VART 1101','Urbanism',3,'art',['art'],'Fine arts core option exploring cities and urban design.',sources.visual),
+      visual:entry('VART 1135','Visual Thinking',3,'art',['art'],'Fine arts core option exploring visual communication, design, and composition.',sources.visual),
+      lifeEarth:entry('BISC 1000','Life on the Planet Earth',3,'science',['life'],'A life-science core option for non-biology majors.',sources.biology),
+      lifeBio:entry('BISC 1010','Foundations of Biology',3,'science',['life'],'Another life-science core option. Selecting two life-science courses does not replace the separate physical-science requirement.',sources.biology),
+      biopsych:entry('PSYC 1100','Biopsychology',3,'science',['life'],'A life-science core option. It may also satisfy the additional elective in the psychology major; it is not required of every student. Full lab logistics are not represented by these fictional meeting times.','https://bulletin.fordham.edu/undergraduate/psychology/'),
+      psychHealth:entry('PSYC 1004','The Mind-Body Connection: Introduction to Behavioral Health',3,'major',['major','social'],'A social-science core choice with no prerequisites listed in the department core guidance. It may count as the additional elective in the psychology major.','https://bulletin.fordham.edu/undergraduate/psychology/'),
+      psychSocial:entry('PSYC 2600','Social Psychology',4,'major',['major','social'],'One Complex Process choice in the psychology major and a social-science core option. Department core guidance lists no prerequisites; you do not need every Complex Process course.','https://bulletin.fordham.edu/undergraduate/psychology/'),
+      psychChild:entry('PSYC 2700','Infant and Child Development',4,'major',['major','social'],'An alternative Complex Process choice and social-science core option; the department lists no prerequisites for this core choice.','https://bulletin.fordham.edu/undergraduate/psychology/'),
+      psychPersonality:entry('PSYC 2800','Personality',4,'major',['major','social'],'An alternative Complex Process choice and social-science core option; the department lists no prerequisites for this core choice.','https://bulletin.fordham.edu/undergraduate/psychology/'),
+      psychPathology:entry('PSYC 2900','Psychopathology',4,'major',['major','social'],'An alternative Complex Process choice and social-science core option; the department lists no prerequisites for this core choice.','https://bulletin.fordham.edu/undergraduate/psychology/'),
+      light:entry('PHYS 1207','Physics of Light and Color',3,'science',['physical'],'A physical-science core option for non-physics majors. Experiments are part of the course; demo times are illustrative.',sources.physics),
+      climate:entry('PHYS 1350','The Physics of Climate Change',3,'science',['physical'],'A physical-science core option addressing climate and energy.',sources.physics),
+      sociology:entry('SOCI 1100','Introduction to Sociology',3,'social',['social'],'An introductory social-science core option.',sources.social),
+      anthropology:entry('ANTH 1100','Introduction to Cultural Anthropology',3,'social',['social'],'An alternative introductory social-science core option.',sources.social),
+      finiteGeneral:entry('MATH 1100','Finite Mathematics',3,'math',['math'],'A mathematical-reasoning core option. Check your major-specific math needs and placement before choosing.',sources.math),
+      appliedCalc:entry('MATH 1203','Applied Calculus I',3,'math',['math'],'A mathematical-reasoning option; this does not replace the Computer Science B.S. Calculus I requirement.',sources.math),
+      macro:entry('ECON 1020','Principles of Macroeconomics',3,'business',['economics'],'Part of the first-year Gabelli economics core, in addition to microeconomics.',sources.gabelliCore),
+      businessCalc:entry('MATH 1109','Math for Business: Calculus',3,'math',['math'],'A first-year Gabelli core course. Placement and any needed foundational coursework determine timing.',sources.gabelliCore),
+      businessStats:entry('ECON 2140','Statistics I',4,'math',['statistics'],'Required in the Gabelli liberal arts core. Discuss first-year sequencing with your class dean.',sources.gabelliCore),
+      historyUS:entry('HIST 1100','Understanding Historical Change: American History',3,'history',['history'],'One choice for the historical-change requirement.',sources.gabelliCore),
+      historyLatin:entry('HIST 1400','Understanding Historical Change: Latin America',3,'history',['history'],'Another historical-change option, not an extra history requirement.',sources.gabelliCore),
+      spanish:entry('SPAN 1001','Introduction to Spanish I',5,'language',['language'],'A placement-dependent start to the language sequence, not completion of the language requirement. Demo meetings approximate an intensive language course.',sources.spanish),
+      french:entry('FREN 1001','Introduction to French I',5,'language',['language'],'A placement-dependent start to the language sequence, not completion of the language requirement. Demo meetings approximate an intensive language course.',sources.french)
+    });
+    const metadata={cs1:['major',['major','math'],sources.cs],discrete:['major',['major','math'],sources.cs],calculus:['major',['major','math'],sources.cs],psychology:['major',['major'],sources.psychology],writing:['english',['english'],sources.core],philosophy:['humanities',['philosophy'],sources.core],theology:['humanities',['theology'],sources.core],history:['history',['history'],sources.core],ground:['business',['business'],sources.gabelliStart],finite:['math',['math'],sources.gabelliCore],micro:['business',['economics'],sources.gabelliCore]};
+    Object.entries(metadata).forEach(([key,[group,areas,source]])=>Object.assign(catalog[key],{group,areas,source}));
+    const artKeys=['artWorld','artAsia','artAmerica','artAfrica','artArchitecture','music','theatre','urban','visual'];
+    const commonKeys=['writing','philosophy','theology','history','historyUS','historyLatin',...artKeys];
+    const scienceKeys=['lifeEarth','lifeBio','biopsych','light','climate'];
+    const socialKeys=['sociology','anthropology'];
+    majors[0].keys=['cs1','discrete','calculus',...commonKeys,...scienceKeys,...socialKeys];
+    majors[1].keys=['psychology','psychHealth','psychSocial','psychChild','psychPersonality','psychPathology','finiteGeneral','appliedCalc',...commonKeys,...scienceKeys,...socialKeys,'spanish','french'];
+    majors[2].keys=['ground','finite','businessCalc','businessStats','micro','macro',...commonKeys];
+    majors[0].roadmap=[
+      'First foundations: CISC 1600 + 1610, CISC 1400, and MATH 1206 (B.S.).',
+      'Next: CISC 2000 + 2010 (Computer Science II + Lab), CISC 2100 + 2110 (Discrete Structures II + Lab), and CISC 2200 (Data Structures).',
+      'Required upper-level study: CISC 3500 Database Systems, 3593 Computer Organization, 3595 Operating Systems, 4080 Computer Algorithms, 4090 Theory of Computation, and 4615 Data Communications and Networks.',
+      'B.S. additions include CISC 4631 Data Mining and three electives. Course eligibility depends on prerequisites.',
+      'University core requirements also apply; this prototype shows introductory choices, not a complete degree audit.'
+    ];
+    majors[1].roadmap=[
+      'PSYC 1200 Foundations of Psychology, PSYC 2000 Statistics, and PSYC 2010 Research Methods Lab.',
+      'Three content courses: one Basic Process, one Complex Process, and one additional course from either area.',
+      'Two advanced courses, one additional elective, and one capstone complete the 10-course major.',
+      'Include a content laboratory beyond Research Methods Lab and a designated diversity course, following the major rules.',
+      'Core requirements include English, math/computation, separate physical and life science, arts, history, social science, philosophy, and theology. Language requirements depend on the degree path; introductory language begins a sequence.'
+    ];
+    majors[2].roadmap=[
+      'Complete Gabelli’s liberal arts core and business core alongside the finance major. Science and language are not separate Gabelli core requirements.',
+      'Major prerequisites: ACBU 2222 Principles of Financial Accounting and FNBU 3221 Financial Management.',
+      'Required major courses: FNBU 3441 Investments & Security Analysis and FNBU 3440 Corporate Financial Policy.',
+      'Choose two flex-core courses: ACBU 3436 Global Financial Statement Analysis; FNBU 4454 Financial Modeling; 3442 Portfolio Management; 4453 Fixed-Income Analysis; 4476 Financial Applications & Institutions; 3443 Global Business Economics & Trade; or 4430 Computational Finance.',
+      'Choose six approved electives, at least four in upper-level finance. Follow the catalog’s double-counting rules.',
+      'Other business core study includes accounting, law, business ethics, statistics, operations, management, marketing, strategy, information systems, and business communication.'
+    ];
+    majors.forEach(major=>{
+      major.explanation=major.id==='finance'?'Choose from Gabelli business foundations and liberal arts core options. An arts course counts toward the arts requirement; it is not a finance-major course.':'Mix your major foundations with core choices that interest you. Courses in the same requirement area are alternatives, not a list you must take all at once.';
+      major.extra+=' The catalogue below is a researched selection, not every Fordham course or a guarantee of a Rose Hill section this fall.';
+      major.links.push(['Art-history core options',sources.arts],['Visual arts core options',sources.visual],['Music core option',sources.music],['Theatre core option',sources.theatre]);
+      if(major.id!=='finance')major.links.push(['Life-science core options',sources.biology],['Physical-science core options',sources.physics],['Social-science core options',sources.social]);
+      if(major.id!=='finance')major.links.push(['Psychology courses contributing to the core','https://bulletin.fordham.edu/undergraduate/psychology/']);
+      if(major.id==='psych')major.links.push(['Mathematical-reasoning options',sources.math],['Language starting points',sources.spanish]);
+    });
+    majors[0].school='Fordham College · B.A. or B.S.';
+    majors[1].school='Fordham College · B.S.';
+    majors[2].school='Gabelli School of Business · B.S.';
+    majors[0].degreeOptions=['ba','bs'];majors[1].degreeOptions=['bs'];majors[2].degreeOptions=['bs'];
+    majors[0].keys.push('spanish','french');
+    areaLabels.elective='Elective';
+    const degreeLabels={ba:'B.A.',bs:'B.S.'};
+    const degreeNames={ba:'Bachelor of Arts',bs:'Bachelor of Science'};
+    // Team-supplied PROTOTYPE caps, not verified first-year registration limits.
+    // The linked Fordham policies vary by college and approval circumstances.
+    function planningCap(degree,standing='first-year') {
+      if(!['ba','bs'].includes(degree))return null;
+      const upper=['junior','senior'].includes(standing);
+      return degree==='ba'?(upper?18:20):(upper?20:21);
+    }
+    sources.registration='https://bulletin.fordham.edu/undergraduate/rose-hill/academic-policies-procedures/registration/';
+    sources.gabelliRegistration='https://bulletin.fordham.edu/undergraduate/gabelli-business/academic-policies-procedures/registration/';
+    majors.forEach(major=>major.links.push(['Registration policy for this college',major.id==='finance'?sources.gabelliRegistration:sources.registration]));
+    const palette = [
+      {color:'#2664c5',tint:'#dce9ff'}, {color:'#b85c13',tint:'#ffe3bf'},
+      {color:'#7645b5',tint:'#eadbff'}, {color:'#087f83',tint:'#c8eeea'},
+      {color:'#bf3f69',tint:'#ffdae6'}, {color:'#967000',tint:'#fff0b0'},
+      {color:'#397a37',tint:'#dbedce'}, {color:'#865330',tint:'#ead6c2'}
+    ];
+    // Reserve each course's usual color, then resolve collisions within the
+    // selected semester. All weekly options and advisor copies share this map.
+    function colorSelectedCourses(selectedCourses) {
+      const reserved=new Set(selectedCourses.map(course=>course.slot%palette.length)),assigned=new Set();
+      return selectedCourses.map(course=>{
+        let index=course.slot%palette.length;
+        if(assigned.has(index))index=palette.findIndex((_,candidate)=>!reserved.has(candidate));
+        if(index<0)index=course.slot%palette.length;
+        reserved.add(index);assigned.add(index);
+        return {...course,...palette[index]};
+      });
+    }
+    function majorCourses(major,degree=state.degrees[major.id]) { return major.keys.map((key,index) => {
+      const course={...catalog[key],...palette[index%palette.length],key,slot:index};
+      if(major.id==='psych'&&key==='biopsych'){course.areas=['major','life'];course.category='Major elective option · Life science';}
+      if(major.id==='cs'&&key==='calculus'&&degree==='ba'){
+        course.group='math';course.areas=['math'];course.category='Math option · not required for the B.A. major';
+        course.note='Calculus I is required on the B.S. path, not the standard B.A. major. On this path it is an optional math choice, subject to placement.';
+      }
+      if(['spanish','french'].includes(key)){
+        course.weeklyMinutes=300;
+        if(major.id==='cs'&&degree!=='ba'){course.areas=['elective'];course.category='Optional language elective';course.note='Optional language study on this Computer Science B.S. sample path. Placement applies; this introductory course does not complete a language sequence.';}
+      }
+      return course;
+    }); }
+    function roadmapFor(major,degree) {
+      if(major.id!=='cs')return major.roadmap;
+      if(degree==='bs')return major.roadmap;
+      return major.roadmap.map((text,index)=>index===0?'First foundations: CISC 1600 + 1610 and CISC 1400. Calculus I is not required by the standard B.A. major.':index===3?'B.A. students select two approved electives. Calculus I and Data Mining are not individually required on this path; university core and language requirements also apply.':text);
+    }
+    const dayNames = ['Monday','Tuesday','Wednesday','Thursday','Friday'];
+    const scheduleTypes = [
+      {id:'early',name:'Early finish',description:'Start early. Keep more of the day for you.',section:'A'},
+      {id:'late',name:'Slow mornings',description:'Nothing before noon. Ease into your day.',section:'B'},
+      {id:'compact',name:'Friday free',description:'Keep Friday open. A little more weekend.',section:'C'}
+    ];
+    const calendarStart = 480, calendarEnd = 1080;
+    // Build complete demo arrangements for any selection. Never show a partial
+    // calendar as if every selected course were included.
+    function buildSchedules(selectedCourses) {
+      return scheduleTypes.map(type=>{
+        const meetings=[];
+        const startOfDay=type.id==='late'?720:type.id==='compact'?540:510;
+        const patterns=type.id==='compact'?[[0,2],[1,3]]:[[0,2,4],[1,3]];
+        const dayOrder=type.id==='compact'?[2,1,0,3]:[2,1,3,0,4];
+        function allocate(course,days,length,extra={}) {
+          for(let start=startOfDay;start+length<=calendarEnd;start+=15){
+            const end=start+length;
+            if(!meetings.some(m=>m.days.some(d=>days.includes(d))&&m.start<end&&m.end>start)){
+              meetings.push({course,days:[...days],start,end,...extra});return true;
+            }
+          }
+          return false;
+        }
+        let available=true;
+        selectedCourses.forEach((course,index)=>{
+          if(!available)return;
+          const weeklyMinutes=course.weeklyMinutes || (course.areas.includes('language')?300:150);
+          const preferred=index%2;
+          const options=[patterns[preferred],patterns[1-preferred]];
+          const info={code:course.lab?'CISC 1600':course.id,name:course.lab?'Computer Science I':course.name};
+          const placed=options.some(days=>allocate(index,days,weeklyMinutes/days.length,info));
+          if(!placed){available=false;return;}
+          if(course.lab&&!dayOrder.some(day=>allocate(index,[day],60,{lab:true,code:'CISC 1610',name:'Computer Science I Lab'})))available=false;
+        });
+        return {...type,available,meetings:available?meetings:[],reason:available?'':'These courses do not all fit this demo rhythm. Try another option or edit your selection.'};
+      });
+    }
+    function shouldPromptForWeek(before,after) { return before<5 && after>=5; }
+    function freshState() {
+      return {version:5,majorId:null,degrees:{cs:null,psych:'bs',finance:'bs'},selections:Object.fromEntries(majors.map(m=>[m.id,[]])),activeScheduleId:'early',favoriteScheduleId:null,savedPlans:{A:null,B:null,C:null}};
+    }
+    function restoreState(raw) {
+      const next = freshState();
+      let saved;
+      try { saved = JSON.parse(raw); } catch { return next; }
+      if(!saved || ![2,3,4,5].includes(saved.version)) return next;
+      if(majors.some(m=>m.id===saved.majorId)) next.majorId=saved.majorId;
+      majors.forEach(major => {
+        const degree=saved.degrees && saved.degrees[major.id];
+        if(major.degreeOptions.includes(degree))next.degrees[major.id]=degree;
+        else if(saved.version<4&&major.id==='cs')next.degrees.cs='bs';
+        const ids = saved.selections && saved.selections[major.id];
+        if(Array.isArray(ids)) next.selections[major.id]=[...new Set(ids.filter(id=>major.keys.includes(id)))];
+      });
+      if(scheduleTypes.some(t=>t.id===saved.activeScheduleId)) next.activeScheduleId=saved.activeScheduleId;
+      if(next.majorId && next.selections[next.majorId].length && scheduleTypes.some(t=>t.id===saved.favoriteScheduleId)) next.favoriteScheduleId=saved.favoriteScheduleId;
+      ['A','B','C'].forEach(slot=>{next.savedPlans[slot]=normalizePlan(saved.savedPlans&&saved.savedPlans[slot]);});
+      return next;
+    }
+    function normalizePlan(plan) {
+      if(!plan||typeof plan!=='object')return null;
+      const major=majors.find(m=>m.id===plan.majorId);
+      if(!major||!major.degreeOptions.includes(plan.degree)||!scheduleTypes.some(t=>t.id===plan.scheduleId)||!Array.isArray(plan.keys))return null;
+      const keys=[...new Set(plan.keys.filter(key=>major.keys.includes(key)))];
+      if(!keys.length||keys.length!==plan.keys.length)return null;
+      // Use the same catalogue order and degree rules as the live calendar.
+      const planCourses=majorCourses(major,plan.degree).filter(c=>keys.includes(c.key));
+      if(planCourses.reduce((sum,c)=>sum+c.credits,0)>planningCap(plan.degree)||!buildSchedules(planCourses).find(s=>s.id===plan.scheduleId).available)return null;
+      return {majorId:major.id,degree:plan.degree,keys:planCourses.map(c=>c.key),scheduleId:plan.scheduleId,notes:typeof plan.notes==='string'?plan.notes.slice(0,1000):''};
+    }
+    const storageKey = 'weekwise-fordham-v2';
+    let state = freshState(), storageAvailable = true, rememberChoices = false;
+    try { const raw=localStorage.getItem(storageKey);if(raw){state=restoreState(raw);rememberChoices=true;} } catch { storageAvailable=false; }
+    let courses = [], schedules = [], inspectedCourse = 0;
+    let majorChosenThisVisit=false, profileConfirmed=false;
+    function degreeFor(major=selectedMajor()) { return major?state.degrees[major.id]:null; }
+    function profileReady() { const major=selectedMajor();return !!(majorChosenThisVisit&&profileConfirmed&&major&&major.degreeOptions.includes(degreeFor(major))); }
+    function selectedCredits() { return courses.reduce((sum,c)=>sum+c.credits,0); }
+    function currentCap() { return planningCap(degreeFor()); }
+    function withinPlanningCap() { const cap=currentCap();return cap!==null&&selectedCredits()<=cap; }
+    function canExplore() { return profileReady()&&courses.length>0&&withinPlanningCap(); }
+    function selectedMajor() { return majors.find(m=>m.id===state.majorId); }
+    function refreshModel() {
+      const major=selectedMajor();
+      courses=major ? colorSelectedCourses(majorCourses(major).filter(c=>state.selections[major.id].includes(c.key))) : [];
+      schedules=buildSchedules(courses);
+      if(state.favoriteScheduleId&&!schedules.some(s=>s.id===state.favoriteScheduleId&&s.available))state.favoriteScheduleId=null;
+      inspectedCourse=0;
+    }
+    refreshModel();
+    function clock(minutes) {
+      const hour = Math.floor(minutes / 60);
+      return (hour % 12 || 12) + ':' + String(minutes % 60).padStart(2,'0') + (hour < 12 ? ' AM' : ' PM');
+    }
+    function timeRange(start,end) {
+      const samePeriod = (start < 720) === (end < 720);
+      return (samePeriod ? clock(start).replace(/ [AP]M$/,'') : clock(start)) + '–' + clock(end);
+    }
+    function duration(minutes) {
+      return (Math.floor(minutes / 60) ? Math.floor(minutes / 60) + 'h' : '') + (minutes % 60 ? ' ' + minutes % 60 + 'm' : '') || '0m';
+    }
+    function scheduleMetrics(schedule) {
+      let classTime = 0, gaps = 0, days = 0;
+      dayNames.forEach((_,day) => {
+        const meetings = schedule.meetings.filter(m => m.days.includes(day)).sort((a,b) => a.start-b.start);
+        if (meetings.length) days++;
+        meetings.forEach((meeting,index) => {
+          classTime += meeting.end-meeting.start;
+          if (index) gaps += meeting.start-meetings[index-1].end;
+        });
+      });
+      return {days,classTime,gaps,first:Math.min(...schedule.meetings.map(m => m.start)),last:Math.max(...schedule.meetings.map(m => m.end))};
+    }
+    function saveState() {
+      if(rememberChoices)try { localStorage.setItem(storageKey,JSON.stringify(state)); storageAvailable=true; } catch { storageAvailable=false; }
+      document.querySelector('#storage-message span').textContent=dataLifetime();
+      document.querySelector('#remember-choices').checked=rememberChoices;
+      document.querySelector('#privacy-lifetime').textContent=rememberChoices?(storageAvailable?'Saving is on. Use sample information and clear your data on shared computers.':'This browser could not save your choices. Download any plan you want to keep.'):'Saving is off. Your choices last until you reload or close this page.';
+    }
+    function dataLifetime() {return rememberChoices&&storageAvailable?'Saved in this browser.':rememberChoices?'Storage unavailable · choices last this visit.':'Choices last this visit · browser saving is off.';}
+    let requirementFilter='all', searchQuery='';
+    const majorOptions=document.querySelector('#major-options');
+    majors.forEach(major=>{
+      const button=document.createElement('button');
+      button.type='button';button.className='major-option';button.dataset.major=major.id;
+      button.setAttribute('aria-controls','course-picker');
+      button.innerHTML='<span class="major-symbol" aria-hidden="true"></span><span class="major-name"></span><span class="major-school"></span><span class="major-check" aria-hidden="true"></span>';
+      button.querySelector('.major-symbol').textContent=major.icon;
+      button.querySelector('.major-name').textContent=major.name;
+      button.querySelector('.major-school').textContent=major.school;
+      button.addEventListener('click',()=>{
+        closeReadinessPrompt(false);
+        if(state.majorId!==major.id){state.majorId=major.id;state.favoriteScheduleId=null;state.activeScheduleId='early';requirementFilter='all';searchQuery='';document.querySelector('#course-search').value='';}
+        majorChosenThisVisit=true;profileConfirmed=major.degreeOptions.length===1;
+        if(profileConfirmed)state.degrees[major.id]=major.degreeOptions[0];
+        refreshModel();saveState();renderHome();renderSchedule();
+        document.querySelector('#home-message').textContent=profileConfirmed?major.name+' · '+degreeLabels[degreeFor(major)]+' selected. Choose your fall courses below.':'Choose your Computer Science degree path to reveal the courses.';
+        if(profileReady())revealCourses();
+      });
+      majorOptions.append(button);
+    });
+    function renderDegreePicker() {
+      const major=selectedMajor(),panel=document.querySelector('#degree-picker');
+      panel.hidden=!majorChosenThisVisit||!major;
+      if(panel.hidden)return;
+      document.querySelector('#degree-title').textContent=major.degreeOptions.length>1?'Which degree are you pursuing?':'Your degree path';
+      document.querySelector('#degree-description').textContent=major.degreeOptions.length>1?'Choose B.A. or B.S. to reveal the course options for your path.':major.name+' is listed as a '+degreeNames[major.degreeOptions[0]]+' in this Fordham programme.';
+      const options=document.querySelector('#degree-options');options.replaceChildren();
+      if(major.degreeOptions.length===1){const fixed=document.createElement('span');fixed.className='degree-fixed';fixed.textContent=degreeNames[degreeFor(major)]+' ('+degreeLabels[degreeFor(major)]+')';options.append(fixed);}
+      else major.degreeOptions.forEach(degree=>{
+        const button=document.createElement('button');button.type='button';button.className='degree-option';button.setAttribute('aria-pressed',String(profileConfirmed&&degreeFor(major)===degree));button.setAttribute('aria-controls','course-picker');
+        button.textContent=degreeNames[degree]+' ('+degreeLabels[degree]+')';const description=document.createElement('span');description.textContent=planningCap(degree)+'-credit first-year planning cap';button.append(description);
+        button.addEventListener('click',()=>{
+          closeReadinessPrompt(false);
+          state.degrees[major.id]=degree;profileConfirmed=true;state.favoriteScheduleId=null;
+          refreshModel();saveState();renderHome();renderSchedule();
+          document.querySelector('#home-message').textContent=withinPlanningCap()?major.name+' · '+degreeLabels[degree]+' selected. Choose your courses below.':'Your saved courses exceed this path’s '+currentCap()+'-credit planning cap. Remove a course to continue.';
+          revealCourses();
+        });options.append(button);
+      });
+      document.querySelector('#degree-policy-note').textContent='Planning caps are supplied by the prototype team. Confirm registration limits and approvals with your college.';
+    }
+    function renderHome() {
+      const major=selectedMajor();
+      majorOptions.querySelectorAll('button').forEach(button=>{
+        const selected=majorChosenThisVisit&&button.dataset.major===state.majorId;
+        button.setAttribute('aria-pressed',String(selected));
+        button.querySelector('.major-check').textContent=selected?'✓':'';
+      });
+      renderDegreePicker();
+      const ready=profileReady();
+      document.querySelector('#weekly-nav').hidden=!ready;
+      document.querySelector('#welcome-note').hidden=ready;
+      document.querySelector('#welcome-note').textContent=majorChosenThisVisit?'Choose a degree path above to unlock your courses.':'Choose your major above to unlock your first-fall course options.';
+      document.querySelector('#course-picker').hidden=!ready;
+      if(!ready)return;
+      document.querySelector('#major-context').textContent=major.name+' · '+degreeLabels[degreeFor(major)]+' · First fall';
+      document.querySelector('#major-explanation').textContent=major.explanation;
+      document.querySelector('#year-ahead').textContent=major.next;
+      document.querySelector('#major-extra-note').textContent=major.id==='cs'?'This prototype tracks the '+degreeLabels[degreeFor(major)]+' path. Placement, prior credit, and complete degree auditing are not modeled.':major.extra;
+      const links=document.querySelector('#source-list');links.replaceChildren();
+      major.links.forEach(([label,url])=>{const li=document.createElement('li'),a=document.createElement('a');a.href=url;a.textContent=label+' ↗';a.target='_blank';a.rel='noopener noreferrer';li.append(a);links.append(li);});
+      const roadmap=document.querySelector('#major-roadmap');roadmap.replaceChildren();
+      roadmapFor(major,degreeFor(major)).forEach(text=>{const item=document.createElement('li');item.textContent=text;roadmap.append(item);});
+      renderFilters();renderCourseList();
+      updateSelection();updateStatus();
+    }
+    function revealCourses() {
+      const heading=document.querySelector('#course-picker-heading');
+      heading.focus({preventScroll:true});heading.scrollIntoView({block:'start',behavior:'auto'});
+    }
+    const filterLabels={all:'All courses',selected:'Selected',major:'Major',business:'Business',art:'Art',math:'Math',science:'Science',english:'English',history:'History',social:'Social science',language:'Language',humanities:'Philosophy & theology'};
+    function matchesFilter(course,filter) {
+      if(filter==='all')return true;
+      if(filter==='selected')return courses.some(c=>c.key===course.key);
+      if(filter==='science')return course.group==='science';
+      return course.group===filter || course.areas.includes(filter);
+    }
+    function filteredCourses(major,filter,query) {
+      const search=query.trim().toLocaleLowerCase();
+      return majorCourses(major).filter(course=>matchesFilter(course,filter)&&[course.name,course.id,course.category,...course.areas.map(a=>areaLabels[a])].join(' ').toLocaleLowerCase().includes(search));
+    }
+    function renderFilters() {
+      const major=selectedMajor(),container=document.querySelector('#requirement-filters');container.replaceChildren();
+      if(!major)return;
+      Object.entries(filterLabels).forEach(([key,label])=>{
+        if(key!=='all'&&key!=='selected'&&!majorCourses(major).some(c=>matchesFilter(c,key)))return;
+        const button=document.createElement('button');button.type='button';button.className='filter-chip';button.dataset.filter=key;button.textContent=label;button.setAttribute('aria-pressed',String(key===requirementFilter));
+        button.addEventListener('click',()=>{requirementFilter=key;container.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));renderCourseList();updateSelection();});container.append(button);
+      });
+    }
+    function renderCourseList() {
+      const major=selectedMajor();if(!major)return;
+      const list=document.querySelector('#course-list');list.replaceChildren();list.scrollTop=0;
+      const visible=filteredCourses(major,requirementFilter,searchQuery);
+      if(!visible.length){const p=document.createElement('p');p.className='no-results';p.textContent='No courses match. Try another requirement or clear your search.';list.append(p);return;}
+      const groups=[...new Set(visible.map(c=>c.group))];
+      groups.forEach(group=>{
+        const heading=document.createElement('h3');heading.className='course-group-heading';heading.textContent=groupLabels[group];list.append(heading);
+        visible.filter(c=>c.group===group).forEach(course=>{
+          const card=document.createElement('label');card.className='course';card.title=course.note;applyCourseColor(card,courses.find(selected=>selected.key===course.key)||course);
+          card.innerHTML='<input type="checkbox"><span class="course-info"><span class="course-name"></span><span class="course-code"></span></span><span class="requirement-tags"></span><span class="row-credits"></span>';
+          card.querySelector('.course-name').textContent=course.name;
+          card.querySelector('.course-code').textContent=course.id;
+          if(major.defaults.includes(course.key)){const tag=document.createElement('span');tag.className='row-suggested';tag.textContent='Suggested start';card.querySelector('.course-code').append(tag);}
+          const tags=card.querySelector('.requirement-tags');course.areas.forEach(area=>{const tag=document.createElement('span');tag.className='requirement-tag';tag.textContent=areaLabels[area];tags.append(tag);});
+          card.querySelector('.row-credits').textContent=course.credits;
+          const input=card.querySelector('input');input.checked=state.selections[major.id].includes(course.key);input.dataset.key=course.key;
+          input.setAttribute('aria-label',course.name+', '+course.credits+' credits. Counts toward '+course.areas.map(a=>areaLabels[a]).join(', ')+'. '+course.note);
+          input.addEventListener('change',()=>setCourseSelected(course.key,input.checked));list.append(card);
+        });
+      });
+    }
+    function setCourseSelected(key,checked) {
+      const major=selectedMajor();if(!profileReady() || !major || !major.keys.includes(key))return;
+      const course=majorCourses(major).find(c=>c.key===key);
+      if(checked&&!state.selections[major.id].includes(key)&&selectedCredits()+course.credits>currentCap()){
+        document.querySelector('#home-message').textContent=course.name+' would exceed your '+currentCap()+'-credit planning cap. Remove a course first.';
+        document.querySelectorAll('#course-list input').forEach(input=>{input.checked=state.selections[major.id].includes(input.dataset.key);});return;
+      }
+      const before=courses.length,selected=new Set(state.selections[major.id]);
+      if(checked)selected.add(key);else selected.delete(key);
+      state.selections[major.id]=[...selected];state.favoriteScheduleId=null;
+      refreshModel();saveState();updateSelection();renderSchedule();
+      document.querySelectorAll('#course-list input').forEach(input=>{input.checked=selected.has(input.dataset.key);});
+      if(requirementFilter==='selected')renderCourseList();
+      document.querySelector('#home-message').textContent=courses.length+' courses selected. '+(courses.length?'Explore your week whenever you are ready.':'Choose at least one course to continue.');
+      if(shouldPromptForWeek(before,courses.length))openReadinessPrompt();
+    }
+    function updateSelection() {
+      const major=selectedMajor();if(!major)return;
+      const credits=courses.reduce((sum,c)=>sum+c.credits,0);
+      document.querySelector('#course-count').textContent=major.keys.length+' options · '+courses.length+' selected';
+      document.querySelector('#selected-count').textContent=courses.length;
+      document.querySelector('#selected-credits').textContent=credits;
+      document.querySelector('#selection-total').textContent=courses.length+' courses · '+credits+' credits'+(courses.some(c=>c.lab)?' · linked lab included':'');
+      document.querySelector('#explore').disabled=!canExplore();
+      const cap=currentCap(),remaining=cap-credits;
+      document.querySelector('#credit-cap-label').textContent=credits+' / '+cap+' credits';
+      document.querySelector('#credit-progress').max=cap;document.querySelector('#credit-progress').value=Math.min(credits,cap);
+      document.querySelector('#credit-budget').dataset.over=String(remaining<0);
+      document.querySelector('#credit-budget-note').textContent=degreeLabels[degreeFor()]+' · '+(remaining>=0?remaining+' credits remaining.':'Remove at least '+(-remaining)+' credits to continue.')+' Team-supplied planning cap; confirm with your college.';
+      document.querySelectorAll('#course-list input').forEach(input=>{const candidate=majorCourses(major).find(c=>c.key===input.dataset.key);input.checked=state.selections[major.id].includes(input.dataset.key);input.disabled=!input.checked&&candidate.credits>remaining;input.title=input.disabled?'This course exceeds your remaining planning credits.':'';applyCourseColor(input.closest('.course'),courses.find(selected=>selected.key===candidate.key)||candidate);});
+      document.querySelector('#selection-hint').textContent=courses.length?'Three weekly rhythms, using your exact selection.':'Pick courses from any requirement area to begin.';
+      const picks=document.querySelector('#semester-picks');picks.replaceChildren();
+      if(!courses.length){const empty=document.createElement('li');empty.className='empty-selection';empty.textContent='Your courses will appear here as you choose. Art, science, and core options are in the catalogue on the left.';picks.append(empty);}
+      courses.forEach(course=>{
+        const item=document.createElement('li');item.className='semester-pick';const name=document.createElement('span');name.textContent=course.name;const code=document.createElement('small');code.textContent=course.id+' · '+course.credits+' cr.';name.append(code);
+        const remove=document.createElement('button');remove.type='button';remove.className='remove-course';remove.textContent='×';remove.setAttribute('aria-label','Remove '+course.name);remove.addEventListener('click',()=>{setCourseSelected(course.key,false);document.querySelector(canExplore()?'#explore':'#course-search').focus({preventScroll:true});});item.append(name,remove);picks.append(item);
+      });
+      const areas=[...new Set(courses.flatMap(c=>c.areas))],coverage=document.querySelector('#coverage-tags');coverage.replaceChildren();
+      areas.forEach(area=>{const tag=document.createElement('span');tag.className='coverage-tag';tag.textContent=areaLabels[area];coverage.append(tag);});
+      syncReadinessPrompt();
+    }
+    document.querySelector('#course-search').addEventListener('input',event=>{searchQuery=event.target.value;renderCourseList();updateSelection();});
+    document.querySelector('#reset-courses').textContent='Load suggested starter set';
+    document.querySelector('#reset-courses').addEventListener('click',()=>{
+      const major=selectedMajor();if(!profileReady()||!major)return;
+      const before=courses.length;state.selections[major.id]=[...major.defaults];state.favoriteScheduleId=null;
+      refreshModel();saveState();renderHome();renderSchedule();
+      document.querySelector('#home-message').textContent='Suggested '+major.name+' selection loaded. You can swap any course.';
+      if(shouldPromptForWeek(before,courses.length))openReadinessPrompt();
+    });
+    const readinessPrompt=document.querySelector('#readiness-prompt');
+    let promptReturnFocus=null;
+    function updateReadinessCopy() {
+      document.querySelector('#readiness-description').textContent='You’ve selected '+courses.length+' courses ('+selectedCredits()+' credits). Compare three ways they could fit into your week — or keep picking.';
+      if(!readinessPrompt.contains(document.activeElement))promptReturnFocus=document.activeElement;
+    }
+    function closeReadinessPrompt(restoreFocus=true) {
+      const focusWasInside=readinessPrompt.contains(document.activeElement);
+      readinessPrompt.hidden=true;document.body.classList.remove('has-ready-nudge');
+      if(restoreFocus&&focusWasInside){
+        const target=promptReturnFocus&&promptReturnFocus.isConnected&&!promptReturnFocus.disabled?promptReturnFocus:document.querySelector(canExplore()?'#explore':'#course-search');
+        target.focus({preventScroll:true});
+      }
+    }
+    function openReadinessPrompt() {
+      if(!canExplore()||location.hash==='#details')return;
+      updateReadinessCopy();readinessPrompt.hidden=false;document.body.classList.add('has-ready-nudge');
+      document.querySelector('#home-message').textContent=courses.length+' courses selected. Weekly options are ready; you can keep picking or explore them now.';
+    }
+    function syncReadinessPrompt() {
+      if(readinessPrompt.hidden)return;
+      if(!canExplore()||courses.length<5||location.hash==='#details'){closeReadinessPrompt(false);return;}
+      updateReadinessCopy();
+    }
+    function goToWeeklyOptions() {
+      if(!canExplore())return;
+      closeReadinessPrompt(false);saveState();location.hash='details';
+    }
+    document.querySelector('#keep-picking').addEventListener('click',()=>closeReadinessPrompt());
+    document.querySelector('#dismiss-readiness').addEventListener('click',()=>closeReadinessPrompt());
+    document.querySelector('#show-week').addEventListener('click',goToWeeklyOptions);
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!readinessPrompt.hidden)closeReadinessPrompt();});
+    function currentSchedule() { return schedules.find(s => s.id === state.activeScheduleId); }
+    function applyCourseColor(element,course) {
+      element.style.setProperty('--accent',course.color);
+      element.style.setProperty('--tint',course.tint);
+    }
+    function renderOptions() {
+      const options = document.querySelector('#schedule-options');
+      // Keep existing buttons in place to preserve keyboard focus when switching.
+      if (!options.children.length) schedules.forEach((schedule,index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'schedule-option';
+        button.dataset.schedule = schedule.id;
+        button.setAttribute('aria-controls','calendar-body');
+        button.disabled=!schedule.available;
+        button.innerHTML = '<span class="option-top"><span class="option-number">OPTION 0' + (index+1) + '</span><span class="pick-badge"></span></span><span class="option-title"></span><span class="option-description"></span><span class="option-preview" aria-hidden="true"></span>';
+        button.querySelector('.option-title').textContent = schedule.name;
+        button.querySelector('.option-description').textContent = schedule.available?schedule.description:'Too many courses for this demo rhythm';
+        const preview = button.querySelector('.option-preview');
+        dayNames.forEach((_,day) => {
+          const column = document.createElement('span');
+          column.className = 'mini-day';
+          const meetings = schedule.meetings.filter(m => m.days.includes(day));
+          meetings.forEach(meeting => {
+            const bar = document.createElement('span');
+            bar.className = 'mini-meeting';
+            applyCourseColor(bar,courses[meeting.course]);
+            bar.style.top = ((meeting.start-calendarStart)/(calendarEnd-calendarStart)*100)+'%';
+            bar.style.height = ((meeting.end-meeting.start)/(calendarEnd-calendarStart)*100)+'%';
+            column.append(bar);
+          });
+          if (!meetings.length) column.innerHTML = '<span class="mini-free">·</span>';
+          preview.append(column);
+        });
+        button.addEventListener('click',() => {
+          state.activeScheduleId = schedule.id;
+          saveState();
+          renderSchedule();
+          const metrics = scheduleMetrics(schedule);
+          document.querySelector('#schedule-announcement').textContent = schedule.name + ' displayed. ' + metrics.days + ' days with class, from ' + clock(metrics.first) + ' to ' + clock(metrics.last) + '. No time overlaps.';
+        });
+        options.append(button);
+      });
+      options.querySelectorAll('.schedule-option').forEach(button => {
+        button.setAttribute('aria-pressed',String(button.dataset.schedule === state.activeScheduleId));
+        button.querySelector('.pick-badge').textContent = button.dataset.schedule === state.favoriteScheduleId ? '✓ Your pick' : '';
+      });
+    }
+    function renderCalendar() {
+      const schedule = currentSchedule();
+      const body = document.querySelector('#calendar-body');
+      body.replaceChildren();
+      document.querySelector('.conflict-badge').hidden=!schedule.available;
+      if(!schedule.available){body.innerHTML='<p class="empty-calendar"></p>';body.firstElementChild.textContent=schedule.reason;document.querySelector('#calendar-title').textContent='Try a smaller selection';document.querySelector('#calendar-subtitle').textContent='Every selected course must fit before an option is shown.';return;}
+      const axis = document.createElement('div');
+      axis.className = 'time-axis';
+      axis.setAttribute('aria-hidden','true');
+      for (let time = calendarStart; time <= calendarEnd; time += 60) {
+        const label = document.createElement('span');
+        label.className = 'hour-label';
+        label.style.top = ((time-calendarStart)/(calendarEnd-calendarStart)*100)+'%';
+        label.textContent = clock(time).replace(':00','');
+        axis.append(label);
+      }
+      body.append(axis);
+      dayNames.forEach((dayName,day) => {
+        const column = document.createElement('div');
+        column.className = 'calendar-day';
+        column.setAttribute('role','group');
+        column.setAttribute('aria-label',dayName);
+        const meetings = schedule.meetings.filter(m => m.days.includes(day)).sort((a,b) => a.start-b.start);
+        meetings.forEach(meeting => {
+          const course = courses[meeting.course];
+          const event = document.createElement('button');
+          event.type = 'button';
+          event.className = 'meeting'+(meeting.lab?' lab':'');
+          event.dataset.course = meeting.course;
+          applyCourseColor(event,course);
+          event.style.top = ((meeting.start-calendarStart)/(calendarEnd-calendarStart)*100)+'%';
+          event.style.height = 'calc(' + ((meeting.end-meeting.start)/(calendarEnd-calendarStart)*100)+'% - 3px)';
+          const label = dayName + ', ' + meeting.name + ', ' + meeting.code + ', ' + timeRange(meeting.start,meeting.end) + '. Demo section ' + schedule.section + '. View course details.';
+          event.setAttribute('aria-label',label);
+          event.setAttribute('aria-controls','course-detail');
+          event.title = label;
+          event.innerHTML = '<span class="meeting-code"></span><span class="meeting-name"></span><span class="meeting-time"></span>';
+          event.querySelector('.meeting-code').textContent = meeting.code;
+          event.querySelector('.meeting-name').textContent = meeting.name;
+          event.querySelector('.meeting-time').textContent = timeRange(meeting.start,meeting.end);
+          event.addEventListener('click',() => { inspectedCourse = meeting.course; renderCourseDetail(true); });
+          column.append(event);
+        });
+        if (!meetings.length) column.innerHTML = '<div class="free-day-note"><span aria-hidden="true">✳</span>No classes<br>'+dayName+' is yours.</div>';
+        body.append(column);
+      });
+      document.querySelector('#calendar-title').textContent = schedule.name;
+      document.querySelector('#calendar-subtitle').textContent = 'First fall · '+courses.length+' courses · Demo sections '+schedule.section;
+    }
+    function renderLegend() {
+      const legend = document.querySelector('#calendar-legend');
+      legend.replaceChildren();
+    courses.forEach((course,index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'legend-item';
+      button.dataset.course = index;
+      button.setAttribute('aria-controls','course-detail');
+      button.setAttribute('aria-label','View '+course.name+' details');
+      applyCourseColor(button,course);
+      button.innerHTML = '<span class="legend-dot" aria-hidden="true"></span><span></span>';
+      button.lastElementChild.textContent = course.id;
+      button.addEventListener('click',() => { inspectedCourse = index; renderCourseDetail(true); });
+      legend.append(button);
+    });
+    }
+    function renderCourseDetail(announce = false) {
+      const schedule = currentSchedule();
+      const course = courses[inspectedCourse];
+      const container = document.querySelector('#course-detail');
+      container.innerHTML = '<p class="panel-label">Selected course</p><div class="course-code"></div><h2 class="detail-name"></h2><p class="detail-category"></p><span class="detail-section"></span><ul class="detail-meetings"></ul><p class="detail-help">Select any class block or course in the legend to see its full details here.</p>';
+      container.querySelector('.course-code').textContent = course.id;
+      container.querySelector('.detail-name').textContent = course.name;
+      container.querySelector('.detail-category').textContent = course.category+'. '+course.note;
+      container.querySelector('.detail-section').textContent = 'Demo section '+schedule.section+' · Fictional times';
+      const meetings = schedule.meetings.filter(m => m.course === inspectedCourse);
+      meetings.forEach(meeting => meeting.days.forEach(day => {
+        const item = document.createElement('li');
+        const name = document.createElement('span');
+        name.textContent = dayNames[day];
+        if(meeting.lab){const lab=document.createElement('span');lab.className='detail-component';lab.textContent='CISC 1610 · Lab';name.append(lab);}
+        const time = document.createElement('span');
+        time.style.color = 'var(--muted)';
+        time.textContent = timeRange(meeting.start,meeting.end);
+        item.append(name,time);
+        container.querySelector('.detail-meetings').append(item);
+      }));
+      document.querySelectorAll('[data-course]').forEach(button => button.setAttribute('aria-pressed',String(Number(button.dataset.course) === inspectedCourse)));
+      if (announce) document.querySelector('#schedule-announcement').textContent = course.name + ' selected. ' + meetings.map(m => m.days.map(d => dayNames[d]).join(', ') + ', '+timeRange(m.start,m.end)).join('; ')+'. Full details below the calendar on smaller screens.';
+    }
+    function renderSummary() {
+      const schedule = currentSchedule();
+      const metrics = schedule.available?scheduleMetrics(schedule):{days:0,first:null,last:null,classTime:0,gaps:0};
+      document.querySelector('#summary-title').textContent = schedule.name;
+      const rows = [['Days with class',metrics.days+' days'],['First class',metrics.first===null?'—':clock(metrics.first)],['Last class ends',metrics.last===null?'—':clock(metrics.last)],['Weekly class time',duration(metrics.classTime)],['Weekly time between classes',duration(metrics.gaps)]];
+      const list = document.querySelector('#week-metrics');
+      list.replaceChildren();
+      rows.forEach(([label,value]) => {
+        const row = document.createElement('div');
+        row.className = 'metric-row';
+        const term = document.createElement('dt');
+        term.textContent = label;
+        const definition = document.createElement('dd');
+        definition.textContent = value;
+        row.append(term,definition);
+        list.append(row);
+      });
+      const chosen = state.favoriteScheduleId === schedule.id;
+      const button = document.querySelector('#choose-schedule');
+      button.textContent = chosen ? '✓ Chosen schedule' : 'Choose this schedule';
+      button.disabled = chosen || !schedule.available;
+      const favorite = schedules.find(s => s.id === state.favoriteScheduleId);
+      document.querySelector('#save-feedback').textContent = !schedule.available ? schedule.reason : favorite ? 'Your pick: '+favorite.name+'. '+dataLifetime() : 'Explore all three, then choose your favorite.';
+      document.querySelector('#clear-choice').hidden = !favorite;
+    }
+    function updateStatus() {
+      const favorite=schedules.find(s=>s.id===state.favoriteScheduleId);
+      document.querySelector('#review-status').textContent=favorite?'Your pick: '+favorite.name+' · '+dataLifetime():'';
+    }
+    let reviewSlot=null;
+    const planSlots=['A','B','C'];
+    function planModel(plan) {
+      const major=majors.find(m=>m.id===plan.majorId);
+      const planCourses=colorSelectedCourses(majorCourses(major,plan.degree).filter(c=>plan.keys.includes(c.key)));
+      return {major,courses:planCourses,schedule:buildSchedules(planCourses).find(s=>s.id===plan.scheduleId),credits:planCourses.reduce((sum,c)=>sum+c.credits,0)};
+    }
+    document.querySelector('#save-for-advising').addEventListener('click',()=>{document.querySelector('#plans-title').scrollIntoView({block:'start'});document.querySelector('#plans-title').focus({preventScroll:true});});
+    function planMessage(message) {document.querySelector('#plan-status').textContent=message;}
+    function storeCurrentPlan(slot) {
+      if(!planSlots.includes(slot)||!canExplore()||!currentSchedule().available)return;
+      const previous=state.savedPlans[slot];
+      state.savedPlans[slot]={majorId:state.majorId,degree:degreeFor(),keys:courses.map(c=>c.key),scheduleId:state.activeScheduleId,notes:previous?previous.notes:''};
+      reviewSlot=slot;saveState();renderSavedPlans();
+      planMessage('Plan '+slot+' '+(previous?'updated':'saved')+'. '+dataLifetime()+' Download a copy to keep or share.');
+      document.querySelector('#advisor-title').focus({preventScroll:true});
+    }
+    function loadPlan(slot) {
+      const plan=state.savedPlans[slot];if(!plan)return;
+      closeReadinessPrompt(false);
+      state.majorId=plan.majorId;state.degrees[plan.majorId]=plan.degree;state.selections[plan.majorId]=[...plan.keys];
+      state.activeScheduleId=plan.scheduleId;state.favoriteScheduleId=null;
+      majorChosenThisVisit=true;profileConfirmed=true;requirementFilter='all';searchQuery='';document.querySelector('#course-search').value='';
+      reviewSlot=slot;refreshModel();saveState();renderHome();renderSchedule();
+      planMessage('Plan '+slot+' opened. Explore another rhythm or change courses; the saved plan stays unchanged until you update it.');
+      document.querySelector('#calendar-title').setAttribute('tabindex','-1');document.querySelector('#calendar-title').focus({preventScroll:true});
+    }
+    function renderSavedPlans() {
+      document.querySelector('#plan-storage-label').textContent=rememberChoices&&storageAvailable?'Saved on this laptop':'This visit only · download a copy';
+      const grid=document.querySelector('#plan-grid');grid.replaceChildren();
+      planSlots.forEach(slot=>{
+        const plan=state.savedPlans[slot],card=document.createElement('div');card.className='plan-card';card.dataset.review=String(reviewSlot===slot);
+        const heading=document.createElement('h3');heading.textContent='Plan '+slot+' · '+(slot==='A'?'First choice':'Backup');
+        const description=document.createElement('p'),meta=document.createElement('small');
+        if(plan){const model=planModel(plan);description.textContent=model.schedule.name+' · '+model.major.name+' '+degreeLabels[plan.degree];meta.textContent=model.courses.length+' courses · '+model.credits+' credits · Sample first fall';}
+        else{description.textContent='Keep a possibility here for your advisor.';meta.textContent='No plan saved yet';}
+        const save=document.createElement('button');save.type='button';save.className='plan-button plan-save';save.textContent=plan?'Update with displayed week':'Save displayed week';save.setAttribute('aria-label',(plan?'Update':'Save')+' Plan '+slot+' with the displayed week');save.disabled=!canExplore()||!currentSchedule().available;save.addEventListener('click',()=>storeCurrentPlan(slot));
+        card.append(heading,description,meta,save);
+        if(plan){const actions=document.createElement('div');actions.className='plan-actions';
+          const open=document.createElement('button');open.type='button';open.className='plan-button';open.textContent='Open week';open.setAttribute('aria-label','Open Plan '+slot);open.addEventListener('click',()=>loadPlan(slot));
+          const review=document.createElement('button');review.type='button';review.className='plan-button';review.textContent='Advisor copy';review.setAttribute('aria-expanded',String(reviewSlot===slot));review.setAttribute('aria-controls','advisor-panel');review.setAttribute('aria-label','Prepare advisor copy of Plan '+slot);review.addEventListener('click',()=>{reviewSlot=slot;renderSavedPlans();planMessage('Preparing the saved version of Plan '+slot+'.');document.querySelector('#advisor-title').focus({preventScroll:true});});
+          actions.append(open,review);card.append(actions);
+        }
+        grid.append(card);
+      });
+      const plan=state.savedPlans[reviewSlot],panel=document.querySelector('#advisor-panel');panel.hidden=!plan;
+      if(plan){const model=planModel(plan);document.querySelector('#advisor-title').textContent='Plan '+reviewSlot+' · ready for a conversation';document.querySelector('#advisor-title').setAttribute('tabindex','-1');
+        document.querySelector('#advisor-description').textContent='Saved snapshot: '+model.major.name+' '+degreeLabels[plan.degree]+' · '+model.schedule.name+' · '+model.credits+' credits. Exports use this saved version, even if the calendar below has changed.';
+        document.querySelector('#advisor-notes').value=plan.notes;
+        document.querySelector('#notes-status').textContent='Notes stay with this plan. '+dataLifetime();
+      }
+    }
+    document.querySelector('#advisor-notes').addEventListener('input',event=>{
+      const plan=state.savedPlans[reviewSlot];if(!plan)return;
+      plan.notes=event.target.value.slice(0,1000);saveState();
+      document.querySelector('#notes-status').textContent='Notes updated. '+dataLifetime();
+    });
+    function escapeHTML(value) {return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));}
+    const reportStyles=`
+      .advisor-report{font-family:Arial,Helvetica,sans-serif;line-height:1.5;color:#253d36;max-width:1000px;margin:auto;padding:24px}.advisor-report h1{font:normal 32px Georgia,serif;letter-spacing:0;margin:8px 0}.advisor-report h2{font-size:18px;margin:20px 0 10px}.advisor-report p{font-size:13px}.report-label{font-size:11px;font-weight:bold;letter-spacing:1px}.report-warning{border:1px solid #cdbb92;padding:12px;background:#fff8e9}.report-calendar{border:1px solid #d3d8ce;margin:20px 0}.report-head{display:grid;grid-template-columns:44px repeat(5,minmax(0,1fr));font-size:11px;text-align:center;padding:9px 0;background:#f1f3ec}.report-week{display:grid;grid-template-columns:44px repeat(5,minmax(0,1fr));height:450px;margin:12px 0 16px}.report-axis,.report-day{position:relative}.report-day{border-left:1px solid #d3d8ce;background:repeating-linear-gradient(to bottom,#e8eae2 0,#e8eae2 1px,transparent 1px,transparent 45px)}.report-hour{position:absolute;right:5px;transform:translateY(-50%);font-size:9px}.report-event{position:absolute;left:3px;right:3px;border-left:3px solid;padding:3px;font-size:9px;line-height:1.2;overflow:hidden;box-sizing:border-box}.report-event strong,.report-event span{display:block}.report-event span{margin-top:3px}.report-table{width:100%;border-collapse:collapse;font-size:11px}.report-table th,.report-table td{border-bottom:1px solid #d3d8ce;padding:9px 6px;text-align:left;vertical-align:top}.report-table th{background:#f1f3ec}.report-table small{font-size:10px}.report-notes{white-space:pre-wrap;border-left:3px solid #a7b89c;padding:10px 14px;background:#f4f5ef}.report-checklist{font-size:12px;padding-left:20px}@page{size:landscape;margin:12mm}@media print{.advisor-report{padding:0;max-width:none}.report-calendar{break-inside:avoid}.report-table thead{display:table-header-group}.report-table tr{break-inside:avoid}*{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+    `;
+    function advisorReport(slot,plan) {
+      const model=planModel(plan),schedule=model.schedule;
+      const axis=Array.from({length:11},(_,i)=>'<span class="report-hour" style="top:'+(i*10)+'%">'+escapeHTML(clock(480+i*60).replace(':00',''))+'</span>').join('');
+      const days=dayNames.map((day,index)=>'<div class="report-day">'+schedule.meetings.filter(m=>m.days.includes(index)).map(m=>{
+        const course=model.courses[m.course];return '<div class="report-event" style="top:'+((m.start-calendarStart)/6)+'%;height:calc('+((m.end-m.start)/6)+'% - 2px);background:'+course.tint+';border-color:'+course.color+'"><strong>'+escapeHTML(m.code)+'</strong><span>'+escapeHTML(timeRange(m.start,m.end))+'</span></div>';
+      }).join('')+'</div>').join('');
+      const rows=model.courses.map((course,index)=>{
+        const times=schedule.meetings.filter(m=>m.course===index).map(m=>escapeHTML((m.lab?'Linked lab · ':'')+m.days.map(d=>dayNames[d]).join(', ')+' '+timeRange(m.start,m.end))).join('<br>');
+        return '<tr><td><strong>'+escapeHTML(course.id)+'</strong><br>'+escapeHTML(course.name)+'</td><td>'+course.credits+'</td><td>'+escapeHTML(course.category)+'</td><td>Demo '+escapeHTML(schedule.section)+'<br><small>Rose Hill sample<br>CRN not available</small></td><td>'+times+'</td></tr>';
+      }).join('');
+      return '<article class="advisor-report"><div class="report-label">WEEKWISE · ADVISOR PLANNING COPY</div><h1>Plan '+slot+' · '+(slot==='A'?'First choice':'Backup')+'</h1><p>Fordham University · '+escapeHTML(model.major.name)+' '+escapeHTML(degreeLabels[plan.degree])+' · First fall (sample term)<br>'+escapeHTML(schedule.name)+' · '+model.courses.length+' courses · '+model.credits+' credits</p><p class="report-warning"><strong>Sample plan · not registered or advisor-approved.</strong> Course names come from Fordham’s catalogue. Sections and meeting times are fictional; no real CRNs or live seat availability are included. Requirement labels show areas a course may apply toward, not a completed degree audit.</p><div class="report-calendar"><div class="report-head"><span>TIME</span>'+dayNames.map(d=>'<strong>'+d+'</strong>').join('')+'</div><div class="report-week"><div class="report-axis">'+axis+'</div>'+days+'</div></div><h2>Courses & meeting details</h2><table class="report-table"><thead><tr><th>Course</th><th>Credits</th><th>Requirement area</th><th>Sample section</th><th>Weekly meetings</th></tr></thead><tbody>'+rows+'</tbody><tfoot><tr><th>Total</th><td>'+model.credits+'</td><td colspan="3">Includes linked lab credit where listed in the course.</td></tr></tfoot></table><h2>Questions for the advisor</h2><p class="report-notes">'+escapeHTML(plan.notes||'No questions added.')+'</p><h2>Before registration</h2><ul class="report-checklist"><li>Review degree requirements, placement, prior credit, and course choices with your advisor.</li><li>Find actual sections and CRNs in Fordham’s official portal; verify linked labs, prerequisites, restrictions, campus travel time, and available seats.</li><li>Keep backup sections ready and complete final registration in Fordham’s portal.</li></ul></article>';
+    }
+    document.querySelector('#download-plan').addEventListener('click',()=>{
+      const plan=state.savedPlans[reviewSlot];if(!plan)return;
+      const html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src &apos;none&apos;; style-src &apos;unsafe-inline&apos;; base-uri &apos;none&apos;; form-action &apos;none&apos;"><title>Weekwise · Plan '+reviewSlot+' · Advisor copy</title><style>'+reportStyles+'</style></head><body>'+advisorReport(reviewSlot,plan)+'</body></html>';
+      const url=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'})),link=document.createElement('a');link.href=url;link.download='Weekwise-Plan-'+reviewSlot+'-advisor-copy.html';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+      planMessage('Advisor copy of Plan '+reviewSlot+' prepared for download. It opens on its own in a browser.');
+    });
+    document.querySelector('#print-plan').addEventListener('click',()=>{
+      const plan=state.savedPlans[reviewSlot];if(!plan)return;
+      document.querySelector('#print-report').innerHTML='<style>'+reportStyles+'</style>'+advisorReport(reviewSlot,plan);document.body.classList.add('printing-plan');window.print();
+    });
+    window.addEventListener('afterprint',()=>{document.body.classList.remove('printing-plan');document.querySelector('#print-report').replaceChildren();});
+    let scheduleSignature='';
+    function renderSchedule() {
+      if(!courses.length){document.querySelector('#schedule-options').replaceChildren();scheduleSignature='';updateStatus();return;}
+      const signature=state.majorId+':'+degreeFor()+':'+courses.map(c=>c.key).join(',');
+      if(signature!==scheduleSignature){document.querySelector('#schedule-options').replaceChildren();scheduleSignature=signature;}
+      if(!currentSchedule().available){const available=schedules.find(s=>s.available);if(available)state.activeScheduleId=available.id;}
+      const major=selectedMajor();
+      document.querySelector('#schedule-context').textContent='Fordham University · '+major.name+' · '+degreeLabels[degreeFor()]+' · First fall · '+courses.length+' courses · Fictional meeting times';
+      renderOptions();renderCalendar();renderLegend();renderSummary();renderCourseDetail();renderSavedPlans();updateStatus();
+    }
+    document.querySelector('#choose-schedule').addEventListener('click',() => {
+      if(!canExplore() || !currentSchedule().available)return;
+      state.favoriteScheduleId = state.activeScheduleId;
+      saveState();
+      renderOptions(); renderSummary(); updateStatus();
+      // The selected button becomes disabled, so move focus to the confirmation.
+      const feedback = document.querySelector('#save-feedback');
+      feedback.setAttribute('tabindex','-1');
+      feedback.focus({preventScroll:true});
+    });
+    document.querySelector('#clear-choice').addEventListener('click',() => {
+      state.favoriteScheduleId = null;
+      saveState();
+      renderOptions(); renderSummary(); updateStatus();
+      document.querySelector('#choose-schedule').focus({preventScroll:true});
+      document.querySelector('#save-feedback').textContent = 'Choice cleared. You can choose any of the three schedules.';
+    });
+    function route(focusHeading = true) {
+      closeReadinessPrompt(false);
+      let screen = location.hash === '#details' ? 'details' : 'home';
+      if(screen==='details'&&!canExplore()){screen='home';history.replaceState(null,'','#home');document.querySelector('#home-message').textContent=!profileReady()?'Choose your major and degree path first.':!courses.length?'Choose at least one course to see weekly possibilities.':'Your selection exceeds the planning cap. Remove a course to continue.';}
+      if (location.hash !== '#home' && location.hash !== '#details') history.replaceState(null,'','#home');
+      document.querySelectorAll('main > section').forEach(section => { section.hidden = section.id !== screen; });
+      document.querySelectorAll('[data-route]').forEach(link => {
+        if (link.dataset.route === screen) link.setAttribute('aria-current','page');
+        else link.removeAttribute('aria-current');
+      });
+      document.title = (screen === 'home' ? 'Fordham major & courses' : 'Weekly possibilities') + ' · Weekwise';
+      updateStatus();
+      if (focusHeading) { document.querySelector('#'+screen+'-title').focus({preventScroll:true}); window.scrollTo(0,0); }
+    }
+    function resetDemoData(removeSaved=true) {
+      let erased=true;
+      if(removeSaved)try{localStorage.removeItem(storageKey);}catch{erased=false;}
+      state=freshState();rememberChoices=false;majorChosenThisVisit=false;profileConfirmed=false;reviewSlot=null;requirementFilter='all';searchQuery='';scheduleSignature='';
+      closeReadinessPrompt(false);refreshModel();
+      ['#course-list','#semester-picks','#coverage-tags','#major-roadmap','#source-list','#calendar-body','#calendar-legend','#course-detail','#week-metrics','#print-report'].forEach(selector=>document.querySelector(selector).replaceChildren());
+      ['#course-search','#advisor-notes'].forEach(selector=>{document.querySelector(selector).value='';});
+      ['#home-message','#schedule-context','#advisor-description','#plan-status'].forEach(selector=>{document.querySelector(selector).textContent='';});
+      document.querySelector('#erase-confirm').hidden=true;document.querySelector('#clear-demo-data').setAttribute('aria-expanded','false');
+      history.replaceState(null,'','#home');saveState();renderHome();renderSchedule();renderSavedPlans();route(false);
+      document.querySelector('#privacy-status').textContent=erased?'Demo choices, saved plans, and notes cleared from this page and browser storage. Downloaded and printed copies remain.':'This page was cleared, but your browser blocked deletion of saved data. Clear this site’s storage in your browser settings.';
+      return erased;
+    }
+    document.querySelector('#remember-choices').addEventListener('change',event=>{
+      rememberChoices=event.target.checked;
+      let removed=true;if(!rememberChoices)try{localStorage.removeItem(storageKey);}catch{removed=false;}
+      saveState();renderSchedule();updateStatus();
+      document.querySelector('#privacy-status').textContent=rememberChoices?(storageAvailable?'Browser saving enabled. Turn it off or clear your data whenever you like.':'This browser blocked saving. Your choices last for this visit.'):(removed?'Browser saving turned off and the stored copy removed. Current choices last for this visit.':'Saving turned off, but this browser blocked removal of the old copy. Clear this site’s storage in browser settings.');
+    });
+    document.querySelector('#clear-demo-data').addEventListener('click',()=>{document.querySelector('#erase-confirm').hidden=false;document.querySelector('#clear-demo-data').setAttribute('aria-expanded','true');document.querySelector('#cancel-erase').focus({preventScroll:true});});
+    document.querySelector('#cancel-erase').addEventListener('click',()=>{document.querySelector('#erase-confirm').hidden=true;document.querySelector('#clear-demo-data').setAttribute('aria-expanded','false');document.querySelector('#clear-demo-data').focus({preventScroll:true});});
+    document.querySelector('#confirm-erase').addEventListener('click',()=>{resetDemoData();document.querySelector('#clear-demo-data').focus({preventScroll:true});});
+    window.addEventListener('storage',event=>{if(event.key===storageKey&&event.newValue===null)resetDemoData(false);});
+    document.querySelector('#explore').addEventListener('click',goToWeeklyOptions);
+    window.addEventListener('hashchange',() => route());
+    saveState();
+    renderHome();
+    renderSchedule();
+    route(false);
+  </script>
+</body>
+</html>

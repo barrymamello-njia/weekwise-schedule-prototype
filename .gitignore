@@ -1,0 +1,8 @@
+*
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/README.md
+!/SECURITY.md
+!/refresh-policy.py
+!/check.cjs
